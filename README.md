@@ -15,8 +15,6 @@ Java idiomatic client for [Cloud Talent Solution][product-overview].
 
 Quickstart
 ----------
-
-[//]: # ({x-version-update-start:google-cloud-talent:released})
 If you are using Maven with Bom, Add this to your pom.xml file.
 ```xml
 <dependencyManagement>
@@ -36,12 +34,13 @@ If you are using Maven with Bom, Add this to your pom.xml file.
   <artifactId>google-cloud-talent</artifactId>
 </dependency>
 ```
+[//]: # ({x-version-update-start:google-cloud-talent:released})
 If you are using Maven without Bom, Add this to your dependencies.
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-talent</artifactId>
-  <version>0.34.0-beta</version>
+  <version>0.34.1-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
