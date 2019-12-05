@@ -56,7 +56,6 @@ import com.google.cloud.talent.v4beta1.UpdateTenantRequest;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.List;
 import java.util.UUID;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -72,10 +71,13 @@ public class ITSystemTest {
   private static CompletionClient completionClient;
   private static Tenant tenant;
   private static String tenantId;
+  private static TenantName tenantName;
   private static Company company;
   private static String companyId;
+  private static CompanyName companyName;
   private static Job job;
   private static String jobId;
+  private static JobName jobName;
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String TENANT_NAME =
       "projects/"
@@ -83,6 +85,8 @@ public class ITSystemTest {
           + "/tenants/"
           + "tenant-test-"
           + UUID.randomUUID().toString().substring(0, 8);
+  private static final ProjectName PROJECT_NAME = ProjectName.of(PROJECT_ID);
+  private static TenantOrProjectName projectName;
   private static final String DISPLAY_NAME =
       "display-name-test-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String EXTERNAL_ID = String.valueOf(Instant.now().getEpochSecond());
@@ -96,90 +100,88 @@ public class ITSystemTest {
 
   @BeforeClass
   public static void beforeTest() throws IOException {
-    // create tenant
+
+    /* create tenant */
     tenantServiceClient = TenantServiceClient.create();
-    ProjectName parent = ProjectName.of(PROJECT_ID);
-    Tenant tenant = Tenant.newBuilder().setName(TENANT_NAME).setExternalId(EXTERNAL_ID).build();
+    Tenant createTenant =
+        Tenant.newBuilder().setName(TENANT_NAME).setExternalId(EXTERNAL_ID).build();
     CreateTenantRequest request =
-        CreateTenantRequest.newBuilder().setParent(parent.toString()).setTenant(tenant).build();
-    ITSystemTest.tenant = tenantServiceClient.createTenant(request);
-    tenantId =
-        ITSystemTest.tenant
-            .getName()
-            .substring(ITSystemTest.tenant.getName().lastIndexOf("/"))
-            .replace("/", "");
-    // create company
+        CreateTenantRequest.newBuilder()
+            .setParent(PROJECT_NAME.toString())
+            .setTenant(createTenant)
+            .build();
+    tenant = tenantServiceClient.createTenant(request);
+    tenantId = getId(tenant.getName());
+    tenantName = TenantName.of(PROJECT_ID, tenantId);
+
+    /* create company */
     companyServiceClient = CompanyServiceClient.create();
-    TenantOrProjectName companyParent = TenantName.of(PROJECT_ID, tenantId);
-    Company company =
+    projectName = TenantName.of(PROJECT_ID, tenantId);
+    Company createCompany =
         Company.newBuilder().setDisplayName(DISPLAY_NAME).setExternalId(EXTERNAL_ID).build();
     CreateCompanyRequest companyRequest =
         CreateCompanyRequest.newBuilder()
-            .setParent(companyParent.toString())
-            .setCompany(company)
+            .setParent(projectName.toString())
+            .setCompany(createCompany)
             .build();
-    ITSystemTest.company = companyServiceClient.createCompany(companyRequest);
-    companyId =
-        ITSystemTest.company
-            .getName()
-            .substring(ITSystemTest.company.getName().lastIndexOf("/"))
-            .replace("/", "");
-    // create job
+    company = companyServiceClient.createCompany(companyRequest);
+    companyId = getId(company.getName());
+    companyName = CompanyWithTenantName.of(PROJECT_ID, tenantId, companyId);
+
+    /* create job */
     jobServiceClient = JobServiceClient.create();
-    TenantOrProjectName jobParent = TenantName.of(PROJECT_ID, tenantId);
-    List<String> uris = Arrays.asList(JOB_APPLICATION_URL);
-    Job.ApplicationInfo applicationInfo = Job.ApplicationInfo.newBuilder().addAllUris(uris).build();
-    List<String> addresses = Arrays.asList(ADDRESS_ONE, ADDRESS_TWO);
-    Job job =
+    Job.ApplicationInfo applicationInfo =
+        Job.ApplicationInfo.newBuilder().addAllUris(Arrays.asList(JOB_APPLICATION_URL)).build();
+    Job createJob =
         Job.newBuilder()
             .setCompany(companyId)
             .setRequisitionId(REQUISITION_ID)
             .setTitle(TITLE)
             .setDescription(DESCRIPTION)
             .setApplicationInfo(applicationInfo)
-            .addAllAddresses(addresses)
+            .addAllAddresses(Arrays.asList(ADDRESS_ONE, ADDRESS_TWO))
             .setLanguageCode(LANGUAGE_CODE)
             .build();
     CreateJobRequest jobRequest =
-        CreateJobRequest.newBuilder().setParent(jobParent.toString()).setJob(job).build();
-    ITSystemTest.job = jobServiceClient.createJob(jobRequest);
-    jobId =
-        ITSystemTest.job
-            .getName()
-            .substring(ITSystemTest.job.getName().lastIndexOf("/"))
-            .replace("/", "");
-    // create event
+        CreateJobRequest.newBuilder().setParent(projectName.toString()).setJob(createJob).build();
+    job = jobServiceClient.createJob(jobRequest);
+    jobId = getId(job.getName());
+    jobName = JobWithTenantName.of(PROJECT_ID, tenantId, jobId);
+
+    /*create event */
     eventServiceClient = EventServiceClient.create();
+
     // create completion
     completionClient = CompletionClient.create();
   }
 
   @AfterClass
   public static void afterTest() {
+
     completionClient.close();
     eventServiceClient.close();
-    // delete job
-    JobName jobName = JobWithTenantName.of(PROJECT_ID, tenantId, jobId);
+
+    /* delete job */
     DeleteJobRequest jobRequest = DeleteJobRequest.newBuilder().setName(jobName.toString()).build();
     jobServiceClient.deleteJob(jobRequest);
     jobServiceClient.close();
-    // delete company
-    CompanyName companyName = CompanyWithTenantName.of(PROJECT_ID, tenantId, companyId);
+
+    /* delete company */
     DeleteCompanyRequest companyRequest =
         DeleteCompanyRequest.newBuilder().setName(companyName.toString()).build();
     companyServiceClient.deleteCompany(companyRequest);
     companyServiceClient.close();
-    // delete tenant
-    TenantName name = TenantName.of(PROJECT_ID, tenantId);
-    DeleteTenantRequest request = DeleteTenantRequest.newBuilder().setName(name.toString()).build();
+
+    /* delete tenant */
+    DeleteTenantRequest request =
+        DeleteTenantRequest.newBuilder().setName(tenantName.toString()).build();
     tenantServiceClient.deleteTenant(request);
     tenantServiceClient.close();
   }
 
   @Test
   public void getTenantTest() {
-    TenantName name = TenantName.of(PROJECT_ID, tenantId);
-    GetTenantRequest request = GetTenantRequest.newBuilder().setName(name.toString()).build();
+    GetTenantRequest request = GetTenantRequest.newBuilder().setName(tenantName.toString()).build();
     Tenant actual = tenantServiceClient.getTenant(request);
     assertEquals(tenant.getName(), actual.getName());
     assertEquals(tenant.getExternalId(), actual.getExternalId());
@@ -187,13 +189,12 @@ public class ITSystemTest {
 
   @Test
   public void listTenantsTest() {
-    ProjectName parent = ProjectName.of(PROJECT_ID);
     ListTenantsRequest request =
-        ListTenantsRequest.newBuilder().setParent(parent.toString()).build();
-    for (Tenant tenant : tenantServiceClient.listTenants(request).iterateAll()) {
-      if (ITSystemTest.tenant.getName().equals(tenant.getName())) {
-        assertEquals(ITSystemTest.tenant.getExternalId(), tenant.getExternalId());
-        assertEquals(ITSystemTest.tenant.getName(), tenant.getName());
+        ListTenantsRequest.newBuilder().setParent(PROJECT_NAME.toString()).build();
+    for (Tenant actual : tenantServiceClient.listTenants(request).iterateAll()) {
+      if (tenant.getName().equals(actual.getName())) {
+        assertEquals(tenant.getExternalId(), actual.getExternalId());
+        assertEquals(tenant.getName(), actual.getName());
       }
     }
   }
@@ -201,17 +202,17 @@ public class ITSystemTest {
   @Test
   public void updateTenantTest() {
     String external_id = String.valueOf(Instant.now().getEpochSecond());
-    Tenant tenant = ITSystemTest.tenant.toBuilder().setExternalId(external_id).build();
-    UpdateTenantRequest request = UpdateTenantRequest.newBuilder().setTenant(tenant).build();
+    Tenant updateTenant = tenant.toBuilder().setExternalId(external_id).build();
+    UpdateTenantRequest request = UpdateTenantRequest.newBuilder().setTenant(updateTenant).build();
     Tenant actual = tenantServiceClient.updateTenant(request);
-    assertEquals(ITSystemTest.tenant.getName(), actual.getName());
+    assertEquals(tenant.getName(), actual.getName());
     assertEquals(external_id, actual.getExternalId());
   }
 
   @Test
   public void getCompanyTest() {
-    CompanyName name = CompanyWithTenantName.of(PROJECT_ID, tenantId, companyId);
-    GetCompanyRequest request = GetCompanyRequest.newBuilder().setName(name.toString()).build();
+    GetCompanyRequest request =
+        GetCompanyRequest.newBuilder().setName(companyName.toString()).build();
     Company actual = companyServiceClient.getCompany(request);
     assertEquals(company.getName(), actual.getName());
     assertEquals(company.getDisplayName(), actual.getDisplayName());
@@ -220,9 +221,8 @@ public class ITSystemTest {
 
   @Test
   public void listCompaniesTest() {
-    TenantOrProjectName parent = TenantName.of(PROJECT_ID, tenantId);
     ListCompaniesRequest request =
-        ListCompaniesRequest.newBuilder().setParent(parent.toString()).build();
+        ListCompaniesRequest.newBuilder().setParent(projectName.toString()).build();
     for (Company actual : companyServiceClient.listCompanies(request).iterateAll()) {
       if (company.getName().equals(actual.getName())) {
         assertEquals(company.getName(), actual.getName());
@@ -235,18 +235,18 @@ public class ITSystemTest {
   @Test
   public void updateCompanyTest() {
     String careerSiteUri = "www.example.com";
-    Company company = ITSystemTest.company.toBuilder().setCareerSiteUri(careerSiteUri).build();
-    UpdateCompanyRequest request = UpdateCompanyRequest.newBuilder().setCompany(company).build();
+    Company updateCompany = company.toBuilder().setCareerSiteUri(careerSiteUri).build();
+    UpdateCompanyRequest request =
+        UpdateCompanyRequest.newBuilder().setCompany(updateCompany).build();
     Company actual = companyServiceClient.updateCompany(request);
-    assertEquals(ITSystemTest.company.getName(), actual.getName());
-    assertEquals(ITSystemTest.company.getDisplayName(), actual.getDisplayName());
+    assertEquals(company.getName(), actual.getName());
+    assertEquals(company.getDisplayName(), actual.getDisplayName());
     assertEquals(careerSiteUri, actual.getCareerSiteUri());
   }
 
   @Test
   public void getJobTest() {
-    JobName name = JobWithTenantName.of(PROJECT_ID, tenantId, jobId);
-    GetJobRequest request = GetJobRequest.newBuilder().setName(name.toString()).build();
+    GetJobRequest request = GetJobRequest.newBuilder().setName(jobName.toString()).build();
     Job actual = jobServiceClient.getJob(request);
     assertEquals(job.getName(), actual.getName());
     assertEquals(job.getCompany(), actual.getCompany());
@@ -260,10 +260,9 @@ public class ITSystemTest {
 
   @Test
   public void listJobsTest() {
-    TenantOrProjectName parent = TenantName.of(PROJECT_ID, tenantId);
     String filter = "companyName =" + "\"" + company.getName() + "\"";
     ListJobsRequest request =
-        ListJobsRequest.newBuilder().setParent(parent.toString()).setFilter(filter).build();
+        ListJobsRequest.newBuilder().setParent(projectName.toString()).setFilter(filter).build();
     for (Job actual : jobServiceClient.listJobs(request).iterateAll()) {
       if (job.getName().equals(actual.getName())) {
         assertEquals(job.getName(), actual.getName());
@@ -281,17 +280,17 @@ public class ITSystemTest {
   @Test
   public void updateJobTest() {
     String department = "Information technology";
-    Job job = ITSystemTest.job.toBuilder().setDepartment(department).build();
-    UpdateJobRequest request = UpdateJobRequest.newBuilder().setJob(job).build();
+    Job updateJob = job.toBuilder().setDepartment(department).build();
+    UpdateJobRequest request = UpdateJobRequest.newBuilder().setJob(updateJob).build();
     Job actual = jobServiceClient.updateJob(request);
-    assertEquals(ITSystemTest.job.getName(), actual.getName());
-    assertEquals(ITSystemTest.job.getCompany(), actual.getCompany());
-    assertEquals(ITSystemTest.job.getRequisitionId(), actual.getRequisitionId());
-    assertEquals(ITSystemTest.job.getTitle(), actual.getTitle());
-    assertEquals(ITSystemTest.job.getDescription(), actual.getDescription());
-    assertEquals(ITSystemTest.job.getApplicationInfo(), actual.getApplicationInfo());
-    assertEquals(ITSystemTest.job.getAddressesCount(), actual.getAddressesCount());
-    assertEquals(ITSystemTest.job.getLanguageCode(), actual.getLanguageCode());
+    assertEquals(job.getName(), actual.getName());
+    assertEquals(job.getCompany(), actual.getCompany());
+    assertEquals(job.getRequisitionId(), actual.getRequisitionId());
+    assertEquals(job.getTitle(), actual.getTitle());
+    assertEquals(job.getDescription(), actual.getDescription());
+    assertEquals(job.getApplicationInfo(), actual.getApplicationInfo());
+    assertEquals(job.getAddressesCount(), actual.getAddressesCount());
+    assertEquals(job.getLanguageCode(), actual.getLanguageCode());
     assertEquals(department, actual.getDepartment());
   }
 
@@ -300,12 +299,13 @@ public class ITSystemTest {
     String requestId = String.valueOf(Instant.now().getEpochSecond());
     String eventId = String.valueOf(Instant.now().getEpochSecond());
     Instant now = Instant.now();
-    TenantOrProjectName parent = TenantName.of(PROJECT_ID, tenantId);
     Timestamp createTime =
         Timestamp.newBuilder().setSeconds(now.getEpochSecond()).setNanos(now.getNano()).build();
-    JobEvent.JobEventType type = JobEvent.JobEventType.VIEW;
-    List<String> jobs = Arrays.asList(job.getName());
-    JobEvent jobEvent = JobEvent.newBuilder().setType(type).addAllJobs(jobs).build();
+    JobEvent jobEvent =
+        JobEvent.newBuilder()
+            .setType(JobEvent.JobEventType.VIEW)
+            .addAllJobs(Arrays.asList(job.getName()))
+            .build();
     ClientEvent clientEvent =
         ClientEvent.newBuilder()
             .setRequestId(requestId)
@@ -315,7 +315,7 @@ public class ITSystemTest {
             .build();
     CreateClientEventRequest request =
         CreateClientEventRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(projectName.toString())
             .setClientEvent(clientEvent)
             .build();
     ClientEvent actual = eventServiceClient.createClientEvent(request);
@@ -327,14 +327,12 @@ public class ITSystemTest {
 
   @Test
   public void completeQueryTest() {
-    TenantOrProjectName parent = TenantName.of(PROJECT_ID, tenantId);
-    List<String> languageCodes = Arrays.asList("en-US");
     CompleteQueryRequest request =
         CompleteQueryRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(projectName.toString())
             .setQuery("Soft")
             .setPageSize(5)
-            .addAllLanguageCodes(languageCodes)
+            .addAllLanguageCodes(Arrays.asList(LANGUAGE_CODE))
             .build();
     CompleteQueryResponse queryResponse = completionClient.completeQuery(request);
     for (CompleteQueryResponse.CompletionResult result : queryResponse.getCompletionResultsList()) {
@@ -342,5 +340,9 @@ public class ITSystemTest {
         assertEquals(CompleteQueryRequest.CompletionType.JOB_TITLE, result.getType());
       }
     }
+  }
+
+  static String getId(String name) {
+    return name.substring(name.lastIndexOf("/")).replace("/", "");
   }
 }
