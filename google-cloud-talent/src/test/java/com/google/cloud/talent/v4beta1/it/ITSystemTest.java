@@ -43,7 +43,7 @@ import com.google.cloud.talent.v4beta1.JobServiceClient;
 import com.google.cloud.talent.v4beta1.ListCompaniesRequest;
 import com.google.cloud.talent.v4beta1.ListJobsRequest;
 import com.google.cloud.talent.v4beta1.ListTenantsRequest;
-import com.google.cloud.talent.v4beta1.PROJECT_NAME;
+import com.google.cloud.talent.v4beta1.ProjectName;
 import com.google.cloud.talent.v4beta1.Tenant;
 import com.google.cloud.talent.v4beta1.TenantName;
 import com.google.cloud.talent.v4beta1.TenantServiceClient;
@@ -82,7 +82,7 @@ public class ITSystemTest {
           + "/tenants/"
           + "tenant-test-"
           + UUID.randomUUID().toString().substring(0, 8);
-  private static final PROJECT_NAME PROJECT_NAME = PROJECT_NAME.of(PROJECT_ID);
+  private static final ProjectName PROJECT_NAME = ProjectName.of(PROJECT_ID);
   private static final String DISPLAY_NAME =
       "display-name-test-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String EXTERNAL_ID = String.valueOf(Instant.now().getEpochSecond());
