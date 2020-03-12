@@ -138,7 +138,7 @@ public class ITSystemTest {
             .setLanguageCode(LANGUAGE_CODE)
             .build();
     CreateJobRequest jobRequest =
-        CreateJobRequest.newBuilder().setParent(PROJECT_NAME.toString()).setJob(createJob).build();
+        CreateJobRequest.newBuilder().setParent(tenantName.toString()).setJob(createJob).build();
     job = jobServiceClient.createJob(jobRequest);
     jobId = getId(job.getName());
     jobName = JobName.ofProjectTenantJobName(PROJECT_ID, tenantId, jobId);
@@ -217,7 +217,7 @@ public class ITSystemTest {
   @Test
   public void listCompaniesTest() {
     ListCompaniesRequest request =
-        ListCompaniesRequest.newBuilder().setParent(PROJECT_NAME.toString()).build();
+        ListCompaniesRequest.newBuilder().setParent(tenantName.toString()).build();
     for (Company actual : companyServiceClient.listCompanies(request).iterateAll()) {
       if (company.getName().equals(actual.getName())) {
         assertEquals(company.getName(), actual.getName());
@@ -257,7 +257,7 @@ public class ITSystemTest {
   public void listJobsTest() {
     String filter = "companyName =" + "\"" + company.getName() + "\"";
     ListJobsRequest request =
-        ListJobsRequest.newBuilder().setParent(PROJECT_NAME.toString()).setFilter(filter).build();
+        ListJobsRequest.newBuilder().setParent(tenantName.toString()).setFilter(filter).build();
     for (Job actual : jobServiceClient.listJobs(request).iterateAll()) {
       if (job.getName().equals(actual.getName())) {
         assertEquals(job.getName(), actual.getName());
@@ -310,7 +310,7 @@ public class ITSystemTest {
             .build();
     CreateClientEventRequest request =
         CreateClientEventRequest.newBuilder()
-            .setParent(PROJECT_NAME.toString())
+            .setParent(tenantName.toString())
             .setClientEvent(clientEvent)
             .build();
     ClientEvent actual = eventServiceClient.createClientEvent(request);
@@ -324,7 +324,7 @@ public class ITSystemTest {
   public void completeQueryTest() {
     CompleteQueryRequest request =
         CompleteQueryRequest.newBuilder()
-            .setParent(PROJECT_NAME.toString())
+            .setParent(tenantName.toString())
             .setQuery("Soft")
             .setPageSize(5)
             .addAllLanguageCodes(Arrays.asList(LANGUAGE_CODE))
