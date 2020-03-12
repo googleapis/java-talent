@@ -43,7 +43,7 @@ import com.google.cloud.talent.v4beta1.JobServiceClient;
 import com.google.cloud.talent.v4beta1.ListCompaniesRequest;
 import com.google.cloud.talent.v4beta1.ListJobsRequest;
 import com.google.cloud.talent.v4beta1.ListTenantsRequest;
-import com.google.cloud.talent.v4beta1.ProjectName;
+import com.google.cloud.talent.v4beta1.PROJECT_NAME;
 import com.google.cloud.talent.v4beta1.Tenant;
 import com.google.cloud.talent.v4beta1.TenantName;
 import com.google.cloud.talent.v4beta1.TenantServiceClient;
@@ -82,8 +82,7 @@ public class ITSystemTest {
           + "/tenants/"
           + "tenant-test-"
           + UUID.randomUUID().toString().substring(0, 8);
-  private static final ProjectName PROJECT_NAME = ProjectName.of(PROJECT_ID);
-  private static ProjectName projectName;
+  private static final PROJECT_NAME PROJECT_NAME = PROJECT_NAME.of(PROJECT_ID);
   private static final String DISPLAY_NAME =
       "display-name-test-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String EXTERNAL_ID = String.valueOf(Instant.now().getEpochSecond());
@@ -139,7 +138,7 @@ public class ITSystemTest {
             .setLanguageCode(LANGUAGE_CODE)
             .build();
     CreateJobRequest jobRequest =
-        CreateJobRequest.newBuilder().setParent(projectName.toString()).setJob(createJob).build();
+        CreateJobRequest.newBuilder().setParent(PROJECT_NAME.toString()).setJob(createJob).build();
     job = jobServiceClient.createJob(jobRequest);
     jobId = getId(job.getName());
     jobName = JobName.ofProjectTenantJobName(PROJECT_ID, tenantId, jobId);
@@ -218,7 +217,7 @@ public class ITSystemTest {
   @Test
   public void listCompaniesTest() {
     ListCompaniesRequest request =
-        ListCompaniesRequest.newBuilder().setParent(projectName.toString()).build();
+        ListCompaniesRequest.newBuilder().setParent(PROJECT_NAME.toString()).build();
     for (Company actual : companyServiceClient.listCompanies(request).iterateAll()) {
       if (company.getName().equals(actual.getName())) {
         assertEquals(company.getName(), actual.getName());
@@ -258,7 +257,7 @@ public class ITSystemTest {
   public void listJobsTest() {
     String filter = "companyName =" + "\"" + company.getName() + "\"";
     ListJobsRequest request =
-        ListJobsRequest.newBuilder().setParent(projectName.toString()).setFilter(filter).build();
+        ListJobsRequest.newBuilder().setParent(PROJECT_NAME.toString()).setFilter(filter).build();
     for (Job actual : jobServiceClient.listJobs(request).iterateAll()) {
       if (job.getName().equals(actual.getName())) {
         assertEquals(job.getName(), actual.getName());
@@ -311,7 +310,7 @@ public class ITSystemTest {
             .build();
     CreateClientEventRequest request =
         CreateClientEventRequest.newBuilder()
-            .setParent(projectName.toString())
+            .setParent(PROJECT_NAME.toString())
             .setClientEvent(clientEvent)
             .build();
     ClientEvent actual = eventServiceClient.createClientEvent(request);
@@ -325,7 +324,7 @@ public class ITSystemTest {
   public void completeQueryTest() {
     CompleteQueryRequest request =
         CompleteQueryRequest.newBuilder()
-            .setParent(projectName.toString())
+            .setParent(PROJECT_NAME.toString())
             .setQuery("Soft")
             .setPageSize(5)
             .addAllLanguageCodes(Arrays.asList(LANGUAGE_CODE))
