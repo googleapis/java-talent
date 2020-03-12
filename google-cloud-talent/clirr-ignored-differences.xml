@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
-  <!--TODO: To be removed-->
+  <!--TODO: To be removed after 0.36.0-->
   <difference>
     <differenceType>7005</differenceType>
     <className>com/google/cloud/talent/v4beta1/*ServiceClient</className>
