@@ -15,23 +15,24 @@ Java idiomatic client for [Talent Solution][product-docs].
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 ```xml
-<dependencyManagement>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>libraries-bom</artifactId>
+        <version>4.2.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>4.2.0</version>
-      <type>pom</type>
-      <scope>import</scope>
+      <artifactId>google-cloud-talent</artifactId>
     </dependency>
-  </dependencies>
-</dependencyManagement>
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-talent</artifactId>
-  </dependency>
-</dependencies>
+
 ```
 
 [//]: # ({x-version-update-start:google-cloud-talent:released})
@@ -39,11 +40,12 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 If you are using Maven without BOM, add this to your dependencies:
 
 ```xml
-<dependency>
-  <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-talent</artifactId>
-  <version>0.35.2-beta</version>
-</dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-talent</artifactId>
+      <version>0.35.2-beta</version>
+    </dependency>
+
 ```
 
 If you are using Gradle, add this to your dependencies
