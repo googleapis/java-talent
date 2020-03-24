@@ -42,37 +42,37 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ApplicationServiceClientTest {
+  private static MockApplicationService mockApplicationService;
+  private static MockEventService mockEventService;
+  private static MockCompletion mockCompletion;
+  private static MockJobService mockJobService;
+  private static MockCompanyService mockCompanyService;
   private static MockTenantService mockTenantService;
   private static MockProfileService mockProfileService;
-  private static MockEventService mockEventService;
-  private static MockApplicationService mockApplicationService;
-  private static MockCompanyService mockCompanyService;
-  private static MockJobService mockJobService;
-  private static MockCompletion mockCompletion;
   private static MockServiceHelper serviceHelper;
   private ApplicationServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
+    mockApplicationService = new MockApplicationService();
+    mockEventService = new MockEventService();
+    mockCompletion = new MockCompletion();
+    mockJobService = new MockJobService();
+    mockCompanyService = new MockCompanyService();
     mockTenantService = new MockTenantService();
     mockProfileService = new MockProfileService();
-    mockEventService = new MockEventService();
-    mockApplicationService = new MockApplicationService();
-    mockCompanyService = new MockCompanyService();
-    mockJobService = new MockJobService();
-    mockCompletion = new MockCompletion();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockTenantService,
-                mockProfileService,
-                mockEventService,
                 mockApplicationService,
-                mockCompanyService,
+                mockEventService,
+                mockCompletion,
                 mockJobService,
-                mockCompletion));
+                mockCompanyService,
+                mockTenantService,
+                mockProfileService));
     serviceHelper.start();
   }
 
