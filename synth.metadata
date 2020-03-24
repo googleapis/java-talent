@@ -1,26 +1,12 @@
 {
-  "updateTime": "2020-03-24T10:02:57.273737Z",
+  "updateTime": "2020-03-24T10:05:46.513663Z",
   "sources": [
-    {
-      "generator": {
-        "name": "artman",
-        "version": "1.1.1",
-        "dockerImage": "googleapis/artman@sha256:5ef340c8d9334719bc5c6981d95f4a5d2737b0a6a24f2b9a0d430e96fff85c5b"
-      }
-    },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "275fbcce2c900278d487c33293a3c7e1fbcd3a34",
         "internalRef": "301661567"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "bcad3e01b69851ad682a87f8202003a1683ad73a"
       }
     },
     {
@@ -38,8 +24,7 @@
         "apiName": "talent",
         "apiVersion": "v4beta1",
         "language": "java",
-        "generator": "gapic",
-        "config": "google/cloud/talent/artman_talent_v4beta1.yaml"
+        "generator": "bazel"
       }
     }
   ]

@@ -43,12 +43,12 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class TenantServiceClientTest {
   private static MockApplicationService mockApplicationService;
-  private static MockEventService mockEventService;
-  private static MockCompletion mockCompletion;
-  private static MockJobService mockJobService;
   private static MockCompanyService mockCompanyService;
-  private static MockTenantService mockTenantService;
+  private static MockCompletion mockCompletion;
+  private static MockEventService mockEventService;
+  private static MockJobService mockJobService;
   private static MockProfileService mockProfileService;
+  private static MockTenantService mockTenantService;
   private static MockServiceHelper serviceHelper;
   private TenantServiceClient client;
   private LocalChannelProvider channelProvider;
@@ -56,23 +56,23 @@ public class TenantServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockApplicationService = new MockApplicationService();
-    mockEventService = new MockEventService();
-    mockCompletion = new MockCompletion();
-    mockJobService = new MockJobService();
     mockCompanyService = new MockCompanyService();
-    mockTenantService = new MockTenantService();
+    mockCompletion = new MockCompletion();
+    mockEventService = new MockEventService();
+    mockJobService = new MockJobService();
     mockProfileService = new MockProfileService();
+    mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
                 mockApplicationService,
-                mockEventService,
-                mockCompletion,
-                mockJobService,
                 mockCompanyService,
-                mockTenantService,
-                mockProfileService));
+                mockCompletion,
+                mockEventService,
+                mockJobService,
+                mockProfileService,
+                mockTenantService));
     serviceHelper.start();
   }
 

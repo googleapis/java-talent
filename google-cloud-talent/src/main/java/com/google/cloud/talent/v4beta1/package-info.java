@@ -35,18 +35,18 @@
  * </code>
  * </pre>
  *
- * ================== EventServiceClient ==================
+ * ==================== CompanyServiceClient ====================
  *
- * <p>Service Description: A service handles client event report.
+ * <p>Service Description: A service that handles company management, including CRUD and
+ * enumeration.
  *
- * <p>Sample for EventServiceClient:
+ * <p>Sample for CompanyServiceClient:
  *
  * <pre>
  * <code>
- * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
- *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
+ * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+ *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+ *   companyServiceClient.deleteCompany(name);
  * }
  * </code>
  * </pre>
@@ -60,7 +60,7 @@
  * <pre>
  * <code>
  * try (CompletionClient completionClient = CompletionClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   String query = "";
  *   int pageSize = 0;
  *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
@@ -69,6 +69,22 @@
  *     .setPageSize(pageSize)
  *     .build();
  *   CompleteQueryResponse response = completionClient.completeQuery(request);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================== EventServiceClient ==================
+ *
+ * <p>Service Description: A service handles client event report.
+ *
+ * <p>Sample for EventServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
+ *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
  * }
  * </code>
  * </pre>
@@ -89,18 +105,18 @@
  * </code>
  * </pre>
  *
- * ==================== CompanyServiceClient ====================
+ * ==================== ProfileServiceClient ====================
  *
- * <p>Service Description: A service that handles company management, including CRUD and
- * enumeration.
+ * <p>Service Description: A service that handles profile management, including profile CRUD,
+ * enumeration and search.
  *
- * <p>Sample for CompanyServiceClient:
+ * <p>Sample for ProfileServiceClient:
  *
  * <pre>
  * <code>
- * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
- *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
- *   companyServiceClient.deleteCompany(name);
+ * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+ *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+ *   profileServiceClient.deleteProfile(name);
  * }
  * </code>
  * </pre>
@@ -116,22 +132,6 @@
  * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
  *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
  *   tenantServiceClient.deleteTenant(name);
- * }
- * </code>
- * </pre>
- *
- * ==================== ProfileServiceClient ====================
- *
- * <p>Service Description: A service that handles profile management, including profile CRUD,
- * enumeration and search.
- *
- * <p>Sample for ProfileServiceClient:
- *
- * <pre>
- * <code>
- * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
- *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
- *   profileServiceClient.deleteProfile(name);
  * }
  * </code>
  * </pre>
