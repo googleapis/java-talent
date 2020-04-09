@@ -1,6 +1,13 @@
 {
-  "updateTime": "2020-04-07T00:49:12.556307Z",
+  "updateTime": "2020-04-09T11:35:26.630537Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-talent.git",
+        "sha": "7cbe2ffcd719c44b29b47e067954aaf5b693550e"
+      }
+    },
     {
       "git": {
         "name": "googleapis",
