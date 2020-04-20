@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.36.2](https://www.github.com/googleapis/java-talent/compare/v0.36.1...v0.36.2) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#134](https://www.github.com/googleapis/java-talent/issues/134)) ([f7c95b3](https://www.github.com/googleapis/java-talent/commit/f7c95b3af542f453c0999da1895977c9475df9ad))
+
 ### [0.36.1](https://www.github.com/googleapis/java-talent/compare/v0.36.0...v0.36.1) (2020-04-07)
 
 
