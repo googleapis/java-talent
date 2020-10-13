@@ -41,12 +41,10 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-talent</artifactId>
-  <version>0.39.0</version>
+  <version>0.39.1</version>
 </dependency>
 
 ```
-
-[//]: # ({x-version-update-start:google-cloud-talent:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
@@ -56,7 +54,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-talent" % "0.39.1"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
