@@ -34,8 +34,8 @@ public class CommuteSearchJobsTest {
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    out = System.out;
+    System.setOut(new PrintStream(bout));
   }
 
   @Test
@@ -51,6 +51,6 @@ public class CommuteSearchJobsTest {
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    System.setOut(out);
   }
 }

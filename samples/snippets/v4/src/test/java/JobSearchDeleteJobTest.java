@@ -42,8 +42,8 @@ public class JobSearchDeleteJobTest {
   @Before
   public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    out = System.out;
+    System.setOut(new PrintStream(bout));
 
     JobSearchCreateJob.createJob(
         PROJECT_ID, TENANT_ID, COMPANY_ID, POST_UNIQUE_ID, "http://www.jobUrl.com");
@@ -68,6 +68,6 @@ public class JobSearchDeleteJobTest {
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    System.setOut(out);
   }
 }

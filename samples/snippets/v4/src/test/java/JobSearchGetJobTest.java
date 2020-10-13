@@ -36,8 +36,8 @@ public class JobSearchGetJobTest {
   @Before
   public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    out = System.out;
+    System.setOut(new PrintStream(bout));
   }
 
   @Test
@@ -50,8 +50,8 @@ public class JobSearchGetJobTest {
   }
 
   @After
-  public void tearDown() throws IOException {
-    System.setOut(null);
+  public void tearDown() {
+    System.setOut(out);
   }
 
   // Helper method for getting the last id from the full path.

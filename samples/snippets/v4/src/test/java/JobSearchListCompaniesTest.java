@@ -33,8 +33,8 @@ public class JobSearchListCompaniesTest {
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    out = System.out;
+    System.setOut(new PrintStream(bout));
   }
 
   @Test
@@ -50,7 +50,6 @@ public class JobSearchListCompaniesTest {
   @After
   public void tearDown() {
     // delete that job.
-
-    System.setOut(null);
+    System.setOut(out);
   }
 }

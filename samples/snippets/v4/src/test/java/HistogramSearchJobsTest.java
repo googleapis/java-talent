@@ -34,8 +34,8 @@ public class HistogramSearchJobsTest {
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    out = System.out;
+    System.setOut(new PrintStream(bout));
   }
 
   @Test
@@ -50,6 +50,6 @@ public class HistogramSearchJobsTest {
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    System.setOut(out);
   }
 }

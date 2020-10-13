@@ -40,8 +40,8 @@ public class JobSearchCreateCompanyTest {
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    out = System.out;
+    System.setOut(new PrintStream(bout));
   }
 
   @Test
@@ -59,6 +59,6 @@ public class JobSearchCreateCompanyTest {
   public void tearDown() throws IOException {
     // delete that job.
     JobSearchDeleteCompany.deleteCompany(PROJECT_ID, TENANT_ID, companyId);
-    System.setOut(null);
+    System.setOut(out);
   }
 }

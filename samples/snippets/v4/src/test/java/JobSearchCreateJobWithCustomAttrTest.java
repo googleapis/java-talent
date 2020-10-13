@@ -42,8 +42,8 @@ public class JobSearchCreateJobWithCustomAttrTest {
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    out = System.out;
+    System.setOut(new PrintStream(bout));
   }
 
   @Test
@@ -67,6 +67,6 @@ public class JobSearchCreateJobWithCustomAttrTest {
     JobSearchDeleteJob.deleteJob(PROJECT_ID, TENANT_ID, jobId);
     String got = bout.toString();
     assertThat(got).contains("Deleted job");
-    System.setOut(null);
+    System.setOut(out);
   }
 }

@@ -38,8 +38,9 @@ public class JobSearchDeleteTenantTest {
   @Before
   public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    out = System.out;
+    System.setOut(new PrintStream(bout));
+
     // create a tenant for job and company
     JobSearchCreateTenant.createTenant(PROJECT_ID, TENANT_EXT_ID);
 
@@ -58,7 +59,7 @@ public class JobSearchDeleteTenantTest {
   }
 
   @After
-  public void tearDown() throws IOException {
-    System.setOut(null);
+  public void tearDown() {
+    System.setOut(out);
   }
 }
