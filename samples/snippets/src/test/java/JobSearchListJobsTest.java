@@ -27,8 +27,10 @@ import org.junit.Test;
 public class JobSearchListJobsTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String TENANT_ID = System.getenv("CTS_TENANT_ID");
+  private static final String COMPANY_ID = System.getenv("CTS_COMPANY_ID");
+
   private static final String FILTER =
-      "companyName=\"projects/%s/companies/bcfaa49f-2ad9-4dfb-8eac-a29cf1b6713d\"";
+      "companyName=\"projects/%s/companies/%s\"";
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -42,7 +44,7 @@ public class JobSearchListJobsTest {
   @Test
   public void testListJobs() throws IOException {
     // retrieve a job.
-    JobSearchListJobs.listJobs(PROJECT_ID, TENANT_ID, String.format(FILTER, PROJECT_ID));
+    JobSearchListJobs.listJobs(PROJECT_ID, TENANT_ID, String.format(FILTER, PROJECT_ID, COMPANY_ID));
     String got = bout.toString();
 
     assertThat(got).contains("Job name:");
