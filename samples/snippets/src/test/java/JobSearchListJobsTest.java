@@ -44,7 +44,8 @@ public class JobSearchListJobsTest {
   @Test
   public void testListJobs() throws IOException {
     // retrieve a job.
-    JobSearchListJobs.listJobs(PROJECT_ID, TENANT_ID, String.format(FILTER, PROJECT_ID, COMPANY_ID));
+    JobSearchListJobs.listJobs(PROJECT_ID, TENANT_ID, String.format(FILTER,
+            PROJECT_ID, COMPANY_ID));
     String got = bout.toString();
 
     assertThat(got).contains("Job name:");
