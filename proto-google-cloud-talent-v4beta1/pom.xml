@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-talent-parent</artifactId>
-    <version>0.40.0</version><!-- {x-version-update:google-cloud-talent:current} -->
+    <version>1.0.0</version><!-- {x-version-update:google-cloud-talent:current} -->
   </parent>
   <dependencies>
     <dependency>
