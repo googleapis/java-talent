@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * A service handles auto completion.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/talent/v4beta1/completion_service.proto")
@@ -125,23 +119,10 @@ public final class CompletionGrpc {
     return CompletionFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service handles auto completion.
-   * </pre>
-   */
+  /** */
   public abstract static class CompletionImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Completes the specified prefix with keyword suggestions.
-     * Intended for use by a job search auto-complete search box.
-     * </pre>
-     */
+    /** */
     public void completeQuery(
         com.google.cloud.talent.v4beta1.CompleteQueryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.CompleteQueryResponse>
@@ -163,13 +144,7 @@ public final class CompletionGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service handles auto completion.
-   * </pre>
-   */
+  /** */
   public static final class CompletionStub extends io.grpc.stub.AbstractAsyncStub<CompletionStub> {
     private CompletionStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -180,14 +155,7 @@ public final class CompletionGrpc {
       return new CompletionStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Completes the specified prefix with keyword suggestions.
-     * Intended for use by a job search auto-complete search box.
-     * </pre>
-     */
+    /** */
     public void completeQuery(
         com.google.cloud.talent.v4beta1.CompleteQueryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.CompleteQueryResponse>
@@ -199,13 +167,7 @@ public final class CompletionGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service handles auto completion.
-   * </pre>
-   */
+  /** */
   public static final class CompletionBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<CompletionBlockingStub> {
     private CompletionBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -218,27 +180,14 @@ public final class CompletionGrpc {
       return new CompletionBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Completes the specified prefix with keyword suggestions.
-     * Intended for use by a job search auto-complete search box.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.talent.v4beta1.CompleteQueryResponse completeQuery(
         com.google.cloud.talent.v4beta1.CompleteQueryRequest request) {
       return blockingUnaryCall(getChannel(), getCompleteQueryMethod(), getCallOptions(), request);
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service handles auto completion.
-   * </pre>
-   */
+  /** */
   public static final class CompletionFutureStub
       extends io.grpc.stub.AbstractFutureStub<CompletionFutureStub> {
     private CompletionFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -250,14 +199,7 @@ public final class CompletionGrpc {
       return new CompletionFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Completes the specified prefix with keyword suggestions.
-     * Intended for use by a job search auto-complete search box.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.CompleteQueryResponse>
         completeQuery(com.google.cloud.talent.v4beta1.CompleteQueryRequest request) {
