@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1;
 
 import com.google.api.core.ApiFunction;
@@ -31,10 +32,11 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service that handles application management, including CRUD and
  * enumeration.
@@ -42,17 +44,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
- *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
- *   Application application = Application.newBuilder().build();
- *   Application response = applicationServiceClient.createApplication(parent, application);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the applicationServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the ApplicationServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -81,30 +73,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ApplicationServiceSettings applicationServiceSettings =
  *     ApplicationServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ApplicationServiceClient applicationServiceClient =
  *     ApplicationServiceClient.create(applicationServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ApplicationServiceSettings applicationServiceSettings =
  *     ApplicationServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ApplicationServiceClient applicationServiceClient =
  *     ApplicationServiceClient.create(applicationServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class ApplicationServiceClient implements BackgroundResource {
   private final ApplicationServiceSettings settings;
   private final ApplicationServiceStub stub;
@@ -125,7 +115,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ApplicationServiceClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use ApplicationServiceSettings}.
+   * is for advanced usage - prefer using create(ApplicationServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ApplicationServiceClient create(ApplicationServiceStub stub) {
@@ -157,19 +147,9 @@ public class ApplicationServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new application entity.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   Application application = Application.newBuilder().build();
-   *   Application response = applicationServiceClient.createApplication(parent, application);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the profile under which the application is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
@@ -180,25 +160,15 @@ public class ApplicationServiceClient implements BackgroundResource {
   public final Application createApplication(ProfileName parent, Application application) {
     CreateApplicationRequest request =
         CreateApplicationRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(Objects.isNull(parent) ? null : parent.toString())
             .setApplication(application)
             .build();
     return createApplication(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new application entity.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   Application application = Application.newBuilder().build();
-   *   Application response = applicationServiceClient.createApplication(parent.toString(), application);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the profile under which the application is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
@@ -212,23 +182,9 @@ public class ApplicationServiceClient implements BackgroundResource {
     return createApplication(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new application entity.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   Application application = Application.newBuilder().build();
-   *   CreateApplicationRequest request = CreateApplicationRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setApplication(application)
-   *     .build();
-   *   Application response = applicationServiceClient.createApplication(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -237,42 +193,19 @@ public class ApplicationServiceClient implements BackgroundResource {
     return createApplicationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new application entity.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   Application application = Application.newBuilder().build();
-   *   CreateApplicationRequest request = CreateApplicationRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setApplication(application)
-   *     .build();
-   *   ApiFuture&lt;Application&gt; future = applicationServiceClient.createApplicationCallable().futureCall(request);
-   *   // Do something
-   *   Application response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateApplicationRequest, Application> createApplicationCallable() {
     return stub.createApplicationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   Application response = applicationServiceClient.getApplication(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the application to be retrieved.
    *     <p>The format is
@@ -282,22 +215,15 @@ public class ApplicationServiceClient implements BackgroundResource {
    */
   public final Application getApplication(ApplicationName name) {
     GetApplicationRequest request =
-        GetApplicationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+        GetApplicationRequest.newBuilder()
+            .setName(Objects.isNull(name) ? null : name.toString())
+            .build();
     return getApplication(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   Application response = applicationServiceClient.getApplication(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the application to be retrieved.
    *     <p>The format is
@@ -310,21 +236,9 @@ public class ApplicationServiceClient implements BackgroundResource {
     return getApplication(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   GetApplicationRequest request = GetApplicationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Application response = applicationServiceClient.getApplication(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -333,40 +247,19 @@ public class ApplicationServiceClient implements BackgroundResource {
     return getApplicationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified application.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   GetApplicationRequest request = GetApplicationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Application&gt; future = applicationServiceClient.getApplicationCallable().futureCall(request);
-   *   // Do something
-   *   Application response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetApplicationRequest, Application> getApplicationCallable() {
     return stub.getApplicationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   Application application = Application.newBuilder().build();
-   *   Application response = applicationServiceClient.updateApplication(application);
-   * }
-   * </code></pre>
    *
    * @param application Required. The application resource to replace the current resource in the
    *     system.
@@ -378,21 +271,9 @@ public class ApplicationServiceClient implements BackgroundResource {
     return updateApplication(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   Application application = Application.newBuilder().build();
-   *   UpdateApplicationRequest request = UpdateApplicationRequest.newBuilder()
-   *     .setApplication(application)
-   *     .build();
-   *   Application response = applicationServiceClient.updateApplication(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -401,40 +282,19 @@ public class ApplicationServiceClient implements BackgroundResource {
     return updateApplicationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates specified application.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   Application application = Application.newBuilder().build();
-   *   UpdateApplicationRequest request = UpdateApplicationRequest.newBuilder()
-   *     .setApplication(application)
-   *     .build();
-   *   ApiFuture&lt;Application&gt; future = applicationServiceClient.updateApplicationCallable().futureCall(request);
-   *   // Do something
-   *   Application response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateApplicationRequest, Application> updateApplicationCallable() {
     return stub.updateApplicationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   applicationServiceClient.deleteApplication(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the application to be deleted.
    *     <p>The format is
@@ -445,23 +305,14 @@ public class ApplicationServiceClient implements BackgroundResource {
   public final void deleteApplication(ApplicationName name) {
     DeleteApplicationRequest request =
         DeleteApplicationRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(Objects.isNull(name) ? null : name.toString())
             .build();
     deleteApplication(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   applicationServiceClient.deleteApplication(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the application to be deleted.
    *     <p>The format is
@@ -474,21 +325,9 @@ public class ApplicationServiceClient implements BackgroundResource {
     deleteApplication(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   DeleteApplicationRequest request = DeleteApplicationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   applicationServiceClient.deleteApplication(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -497,42 +336,19 @@ public class ApplicationServiceClient implements BackgroundResource {
     deleteApplicationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified application.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   DeleteApplicationRequest request = DeleteApplicationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = applicationServiceClient.deleteApplicationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteApplicationRequest, Empty> deleteApplicationCallable() {
     return stub.deleteApplicationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all applications associated with the profile.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   for (Application element : applicationServiceClient.listApplications(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the profile under which the application is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
@@ -542,25 +358,14 @@ public class ApplicationServiceClient implements BackgroundResource {
   public final ListApplicationsPagedResponse listApplications(ProfileName parent) {
     ListApplicationsRequest request =
         ListApplicationsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(Objects.isNull(parent) ? null : parent.toString())
             .build();
     return listApplications(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all applications associated with the profile.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   for (Application element : applicationServiceClient.listApplications(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the profile under which the application is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
@@ -573,23 +378,9 @@ public class ApplicationServiceClient implements BackgroundResource {
     return listApplications(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all applications associated with the profile.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   ListApplicationsRequest request = ListApplicationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Application element : applicationServiceClient.listApplications(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -598,57 +389,22 @@ public class ApplicationServiceClient implements BackgroundResource {
     return listApplicationsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all applications associated with the profile.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   ListApplicationsRequest request = ListApplicationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListApplicationsPagedResponse&gt; future = applicationServiceClient.listApplicationsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Application element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListApplicationsRequest, ListApplicationsPagedResponse>
       listApplicationsPagedCallable() {
     return stub.listApplicationsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all applications associated with the profile.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   ListApplicationsRequest request = ListApplicationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListApplicationsResponse response = applicationServiceClient.listApplicationsCallable().call(request);
-   *     for (Application element : response.getApplicationsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListApplicationsRequest, ListApplicationsResponse>
       listApplicationsCallable() {
