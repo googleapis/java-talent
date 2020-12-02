@@ -22,7 +22,14 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A service that handles profile management, including profile CRUD,
+ * enumeration and search.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/talent/v4beta1/profile_service.proto")
@@ -348,10 +355,23 @@ public final class ProfileServiceGrpc {
     return ProfileServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles profile management, including profile CRUD,
+   * enumeration and search.
+   * </pre>
+   */
   public abstract static class ProfileServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists profiles by filter. The order is unspecified.
+     * </pre>
+     */
     public void listProfiles(
         com.google.cloud.talent.v4beta1.ListProfilesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListProfilesResponse>
@@ -359,35 +379,70 @@ public final class ProfileServiceGrpc {
       asyncUnimplementedUnaryCall(getListProfilesMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates and returns a new profile.
+     * </pre>
+     */
     public void createProfile(
         com.google.cloud.talent.v4beta1.CreateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateProfileMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets the specified profile.
+     * </pre>
+     */
     public void getProfile(
         com.google.cloud.talent.v4beta1.GetProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
       asyncUnimplementedUnaryCall(getGetProfileMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified profile and returns the updated result.
+     * </pre>
+     */
     public void updateProfile(
         com.google.cloud.talent.v4beta1.UpdateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateProfileMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified profile.
+     * Prerequisite: The profile has no associated applications or assignments
+     * associated.
+     * </pre>
+     */
     public void deleteProfile(
         com.google.cloud.talent.v4beta1.DeleteProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteProfileMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Searches for profiles within a tenant.
+     * For example, search by raw queries "software engineer in Mountain View" or
+     * search by structured filters (location filter, education filter, etc.).
+     * See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
+     * </pre>
+     */
     public void searchProfiles(
         com.google.cloud.talent.v4beta1.SearchProfilesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.SearchProfilesResponse>
@@ -440,7 +495,14 @@ public final class ProfileServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles profile management, including profile CRUD,
+   * enumeration and search.
+   * </pre>
+   */
   public static final class ProfileServiceStub
       extends io.grpc.stub.AbstractAsyncStub<ProfileServiceStub> {
     private ProfileServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -452,7 +514,13 @@ public final class ProfileServiceGrpc {
       return new ProfileServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists profiles by filter. The order is unspecified.
+     * </pre>
+     */
     public void listProfiles(
         com.google.cloud.talent.v4beta1.ListProfilesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListProfilesResponse>
@@ -463,7 +531,13 @@ public final class ProfileServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates and returns a new profile.
+     * </pre>
+     */
     public void createProfile(
         com.google.cloud.talent.v4beta1.CreateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
@@ -473,7 +547,13 @@ public final class ProfileServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets the specified profile.
+     * </pre>
+     */
     public void getProfile(
         com.google.cloud.talent.v4beta1.GetProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
@@ -481,7 +561,13 @@ public final class ProfileServiceGrpc {
           getChannel().newCall(getGetProfileMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified profile and returns the updated result.
+     * </pre>
+     */
     public void updateProfile(
         com.google.cloud.talent.v4beta1.UpdateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
@@ -491,7 +577,15 @@ public final class ProfileServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified profile.
+     * Prerequisite: The profile has no associated applications or assignments
+     * associated.
+     * </pre>
+     */
     public void deleteProfile(
         com.google.cloud.talent.v4beta1.DeleteProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -501,7 +595,16 @@ public final class ProfileServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Searches for profiles within a tenant.
+     * For example, search by raw queries "software engineer in Mountain View" or
+     * search by structured filters (location filter, education filter, etc.).
+     * See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
+     * </pre>
+     */
     public void searchProfiles(
         com.google.cloud.talent.v4beta1.SearchProfilesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.SearchProfilesResponse>
@@ -513,7 +616,14 @@ public final class ProfileServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles profile management, including profile CRUD,
+   * enumeration and search.
+   * </pre>
+   */
   public static final class ProfileServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ProfileServiceBlockingStub> {
     private ProfileServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -526,44 +636,92 @@ public final class ProfileServiceGrpc {
       return new ProfileServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists profiles by filter. The order is unspecified.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.ListProfilesResponse listProfiles(
         com.google.cloud.talent.v4beta1.ListProfilesRequest request) {
       return blockingUnaryCall(getChannel(), getListProfilesMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates and returns a new profile.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.Profile createProfile(
         com.google.cloud.talent.v4beta1.CreateProfileRequest request) {
       return blockingUnaryCall(getChannel(), getCreateProfileMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets the specified profile.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.Profile getProfile(
         com.google.cloud.talent.v4beta1.GetProfileRequest request) {
       return blockingUnaryCall(getChannel(), getGetProfileMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified profile and returns the updated result.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.Profile updateProfile(
         com.google.cloud.talent.v4beta1.UpdateProfileRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateProfileMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified profile.
+     * Prerequisite: The profile has no associated applications or assignments
+     * associated.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteProfile(
         com.google.cloud.talent.v4beta1.DeleteProfileRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteProfileMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Searches for profiles within a tenant.
+     * For example, search by raw queries "software engineer in Mountain View" or
+     * search by structured filters (location filter, education filter, etc.).
+     * See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.SearchProfilesResponse searchProfiles(
         com.google.cloud.talent.v4beta1.SearchProfilesRequest request) {
       return blockingUnaryCall(getChannel(), getSearchProfilesMethod(), getCallOptions(), request);
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles profile management, including profile CRUD,
+   * enumeration and search.
+   * </pre>
+   */
   public static final class ProfileServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<ProfileServiceFutureStub> {
     private ProfileServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -576,7 +734,13 @@ public final class ProfileServiceGrpc {
       return new ProfileServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists profiles by filter. The order is unspecified.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.ListProfilesResponse>
         listProfiles(com.google.cloud.talent.v4beta1.ListProfilesRequest request) {
@@ -584,7 +748,13 @@ public final class ProfileServiceGrpc {
           getChannel().newCall(getListProfilesMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates and returns a new profile.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Profile>
         createProfile(com.google.cloud.talent.v4beta1.CreateProfileRequest request) {
@@ -592,7 +762,13 @@ public final class ProfileServiceGrpc {
           getChannel().newCall(getCreateProfileMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets the specified profile.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Profile>
         getProfile(com.google.cloud.talent.v4beta1.GetProfileRequest request) {
@@ -600,7 +776,13 @@ public final class ProfileServiceGrpc {
           getChannel().newCall(getGetProfileMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified profile and returns the updated result.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Profile>
         updateProfile(com.google.cloud.talent.v4beta1.UpdateProfileRequest request) {
@@ -608,14 +790,31 @@ public final class ProfileServiceGrpc {
           getChannel().newCall(getUpdateProfileMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified profile.
+     * Prerequisite: The profile has no associated applications or assignments
+     * associated.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteProfile(com.google.cloud.talent.v4beta1.DeleteProfileRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteProfileMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Searches for profiles within a tenant.
+     * For example, search by raw queries "software engineer in Mountain View" or
+     * search by structured filters (location filter, education filter, etc.).
+     * See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.SearchProfilesResponse>
         searchProfiles(com.google.cloud.talent.v4beta1.SearchProfilesRequest request) {
