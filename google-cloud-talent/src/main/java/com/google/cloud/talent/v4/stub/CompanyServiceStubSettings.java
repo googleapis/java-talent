@@ -54,7 +54,6 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -138,7 +137,7 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
 
             @Override
             public Iterable<Company> extractResources(ListCompaniesResponse payload) {
-              return Objects.isNull(payload.getCompaniesList())
+              return payload.getCompaniesList() == null
                   ? ImmutableList.<Company>of()
                   : payload.getCompaniesList();
             }

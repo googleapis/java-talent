@@ -104,7 +104,7 @@ public class ProfileName implements ResourceName {
   public static List<String> toStringList(List<ProfileName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ProfileName value : values) {
-      if (Objects.isNull(value)) {
+      if (value == null) {
         list.add("");
       } else {
         list.add(value.toString());
@@ -119,17 +119,17 @@ public class ProfileName implements ResourceName {
 
   @Override
   public Map<String, String> getFieldValuesMap() {
-    if (Objects.isNull(fieldValuesMap)) {
+    if (fieldValuesMap == null) {
       synchronized (this) {
-        if (Objects.isNull(fieldValuesMap)) {
+        if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (!Objects.isNull(project)) {
+          if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (!Objects.isNull(tenant)) {
+          if (tenant != null) {
             fieldMapBuilder.put("tenant", tenant);
           }
-          if (!Objects.isNull(profile)) {
+          if (profile != null) {
             fieldMapBuilder.put("profile", profile);
           }
           fieldValuesMap = fieldMapBuilder.build();

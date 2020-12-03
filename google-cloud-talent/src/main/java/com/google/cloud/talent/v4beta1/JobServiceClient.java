@@ -36,7 +36,6 @@ import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -173,7 +172,7 @@ public class JobServiceClient implements BackgroundResource {
   public final Job createJob(ProjectName parent, Job job) {
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setJob(job)
             .build();
     return createJob(request);
@@ -195,7 +194,7 @@ public class JobServiceClient implements BackgroundResource {
   public final Job createJob(TenantName parent, Job job) {
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setJob(job)
             .build();
     return createJob(request);
@@ -259,7 +258,7 @@ public class JobServiceClient implements BackgroundResource {
       ProjectName parent, List<Job> jobs) {
     BatchCreateJobsRequest request =
         BatchCreateJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllJobs(jobs)
             .build();
     return batchCreateJobsAsync(request);
@@ -280,7 +279,7 @@ public class JobServiceClient implements BackgroundResource {
       TenantName parent, List<Job> jobs) {
     BatchCreateJobsRequest request =
         BatchCreateJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllJobs(jobs)
             .build();
     return batchCreateJobsAsync(request);
@@ -350,7 +349,7 @@ public class JobServiceClient implements BackgroundResource {
    */
   public final Job getJob(JobName name) {
     GetJobRequest request =
-        GetJobRequest.newBuilder().setName(Objects.isNull(name) ? null : name.toString()).build();
+        GetJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJob(request);
   }
 
@@ -448,7 +447,7 @@ public class JobServiceClient implements BackgroundResource {
       ProjectName parent, List<Job> jobs) {
     BatchUpdateJobsRequest request =
         BatchUpdateJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllJobs(jobs)
             .build();
     return batchUpdateJobsAsync(request);
@@ -469,7 +468,7 @@ public class JobServiceClient implements BackgroundResource {
       TenantName parent, List<Job> jobs) {
     BatchUpdateJobsRequest request =
         BatchUpdateJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllJobs(jobs)
             .build();
     return batchUpdateJobsAsync(request);
@@ -541,9 +540,7 @@ public class JobServiceClient implements BackgroundResource {
    */
   public final void deleteJob(JobName name) {
     DeleteJobRequest request =
-        DeleteJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteJob(request);
   }
 
@@ -611,7 +608,7 @@ public class JobServiceClient implements BackgroundResource {
   public final void batchDeleteJobs(ProjectName parent, String filter) {
     BatchDeleteJobsRequest request =
         BatchDeleteJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setFilter(filter)
             .build();
     batchDeleteJobs(request);
@@ -638,7 +635,7 @@ public class JobServiceClient implements BackgroundResource {
   public final void batchDeleteJobs(TenantName parent, String filter) {
     BatchDeleteJobsRequest request =
         BatchDeleteJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setFilter(filter)
             .build();
     batchDeleteJobs(request);
@@ -718,7 +715,7 @@ public class JobServiceClient implements BackgroundResource {
   public final ListJobsPagedResponse listJobs(ProjectName parent, String filter) {
     ListJobsRequest request =
         ListJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setFilter(filter)
             .build();
     return listJobs(request);
@@ -753,7 +750,7 @@ public class JobServiceClient implements BackgroundResource {
   public final ListJobsPagedResponse listJobs(TenantName parent, String filter) {
     ListJobsRequest request =
         ListJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setFilter(filter)
             .build();
     return listJobs(request);
