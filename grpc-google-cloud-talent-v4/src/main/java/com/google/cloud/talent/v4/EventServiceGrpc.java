@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * A service handles client event report.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/talent/v4/event_service.proto")
@@ -126,28 +120,10 @@ public final class EventServiceGrpc {
     return EventServiceFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service handles client event report.
-   * </pre>
-   */
+  /** */
   public abstract static class EventServiceImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Report events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution. You may inspect the created events in
-     * [self service
-     * tools](https://console.cloud.google.com/talent-solution/overview).
-     * [Learn
-     * more](https://cloud.google.com/talent-solution/docs/management-tools)
-     * about self service tools.
-     * </pre>
-     */
+    /** */
     public void createClientEvent(
         com.google.cloud.talent.v4.CreateClientEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.ClientEvent> responseObserver) {
@@ -167,13 +143,7 @@ public final class EventServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service handles client event report.
-   * </pre>
-   */
+  /** */
   public static final class EventServiceStub
       extends io.grpc.stub.AbstractAsyncStub<EventServiceStub> {
     private EventServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -185,19 +155,7 @@ public final class EventServiceGrpc {
       return new EventServiceStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Report events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution. You may inspect the created events in
-     * [self service
-     * tools](https://console.cloud.google.com/talent-solution/overview).
-     * [Learn
-     * more](https://cloud.google.com/talent-solution/docs/management-tools)
-     * about self service tools.
-     * </pre>
-     */
+    /** */
     public void createClientEvent(
         com.google.cloud.talent.v4.CreateClientEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.ClientEvent> responseObserver) {
@@ -208,13 +166,7 @@ public final class EventServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service handles client event report.
-   * </pre>
-   */
+  /** */
   public static final class EventServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<EventServiceBlockingStub> {
     private EventServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -227,19 +179,7 @@ public final class EventServiceGrpc {
       return new EventServiceBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Report events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution. You may inspect the created events in
-     * [self service
-     * tools](https://console.cloud.google.com/talent-solution/overview).
-     * [Learn
-     * more](https://cloud.google.com/talent-solution/docs/management-tools)
-     * about self service tools.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.talent.v4.ClientEvent createClientEvent(
         com.google.cloud.talent.v4.CreateClientEventRequest request) {
       return blockingUnaryCall(
@@ -247,13 +187,7 @@ public final class EventServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service handles client event report.
-   * </pre>
-   */
+  /** */
   public static final class EventServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<EventServiceFutureStub> {
     private EventServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -266,19 +200,7 @@ public final class EventServiceGrpc {
       return new EventServiceFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Report events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution. You may inspect the created events in
-     * [self service
-     * tools](https://console.cloud.google.com/talent-solution/overview).
-     * [Learn
-     * more](https://cloud.google.com/talent-solution/docs/management-tools)
-     * about self service tools.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4.ClientEvent>
         createClientEvent(com.google.cloud.talent.v4.CreateClientEventRequest request) {
