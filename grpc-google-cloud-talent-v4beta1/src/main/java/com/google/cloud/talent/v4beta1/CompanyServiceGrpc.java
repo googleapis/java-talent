@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A service that handles company management, including CRUD and enumeration.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/talent/v4beta1/company_service.proto")
@@ -301,38 +307,75 @@ public final class CompanyServiceGrpc {
     return CompanyServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles company management, including CRUD and enumeration.
+   * </pre>
+   */
   public abstract static class CompanyServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new company entity.
+     * </pre>
+     */
     public void createCompany(
         com.google.cloud.talent.v4beta1.CreateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateCompanyMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves specified company.
+     * </pre>
+     */
     public void getCompany(
         com.google.cloud.talent.v4beta1.GetCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
       asyncUnimplementedUnaryCall(getGetCompanyMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates specified company.
+     * </pre>
+     */
     public void updateCompany(
         com.google.cloud.talent.v4beta1.UpdateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateCompanyMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes specified company.
+     * Prerequisite: The company has no jobs associated with it.
+     * </pre>
+     */
     public void deleteCompany(
         com.google.cloud.talent.v4beta1.DeleteCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteCompanyMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all companies associated with the project.
+     * </pre>
+     */
     public void listCompanies(
         com.google.cloud.talent.v4beta1.ListCompaniesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListCompaniesResponse>
@@ -378,7 +421,13 @@ public final class CompanyServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles company management, including CRUD and enumeration.
+   * </pre>
+   */
   public static final class CompanyServiceStub
       extends io.grpc.stub.AbstractAsyncStub<CompanyServiceStub> {
     private CompanyServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -390,7 +439,13 @@ public final class CompanyServiceGrpc {
       return new CompanyServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new company entity.
+     * </pre>
+     */
     public void createCompany(
         com.google.cloud.talent.v4beta1.CreateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
@@ -400,7 +455,13 @@ public final class CompanyServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves specified company.
+     * </pre>
+     */
     public void getCompany(
         com.google.cloud.talent.v4beta1.GetCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
@@ -408,7 +469,13 @@ public final class CompanyServiceGrpc {
           getChannel().newCall(getGetCompanyMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates specified company.
+     * </pre>
+     */
     public void updateCompany(
         com.google.cloud.talent.v4beta1.UpdateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
@@ -418,7 +485,14 @@ public final class CompanyServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes specified company.
+     * Prerequisite: The company has no jobs associated with it.
+     * </pre>
+     */
     public void deleteCompany(
         com.google.cloud.talent.v4beta1.DeleteCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -428,7 +502,13 @@ public final class CompanyServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all companies associated with the project.
+     * </pre>
+     */
     public void listCompanies(
         com.google.cloud.talent.v4beta1.ListCompaniesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListCompaniesResponse>
@@ -440,7 +520,13 @@ public final class CompanyServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles company management, including CRUD and enumeration.
+   * </pre>
+   */
   public static final class CompanyServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<CompanyServiceBlockingStub> {
     private CompanyServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -453,38 +539,75 @@ public final class CompanyServiceGrpc {
       return new CompanyServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new company entity.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.Company createCompany(
         com.google.cloud.talent.v4beta1.CreateCompanyRequest request) {
       return blockingUnaryCall(getChannel(), getCreateCompanyMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves specified company.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.Company getCompany(
         com.google.cloud.talent.v4beta1.GetCompanyRequest request) {
       return blockingUnaryCall(getChannel(), getGetCompanyMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates specified company.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.Company updateCompany(
         com.google.cloud.talent.v4beta1.UpdateCompanyRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateCompanyMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes specified company.
+     * Prerequisite: The company has no jobs associated with it.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteCompany(
         com.google.cloud.talent.v4beta1.DeleteCompanyRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteCompanyMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all companies associated with the project.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.ListCompaniesResponse listCompanies(
         com.google.cloud.talent.v4beta1.ListCompaniesRequest request) {
       return blockingUnaryCall(getChannel(), getListCompaniesMethod(), getCallOptions(), request);
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles company management, including CRUD and enumeration.
+   * </pre>
+   */
   public static final class CompanyServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<CompanyServiceFutureStub> {
     private CompanyServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -497,7 +620,13 @@ public final class CompanyServiceGrpc {
       return new CompanyServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new company entity.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Company>
         createCompany(com.google.cloud.talent.v4beta1.CreateCompanyRequest request) {
@@ -505,7 +634,13 @@ public final class CompanyServiceGrpc {
           getChannel().newCall(getCreateCompanyMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves specified company.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Company>
         getCompany(com.google.cloud.talent.v4beta1.GetCompanyRequest request) {
@@ -513,7 +648,13 @@ public final class CompanyServiceGrpc {
           getChannel().newCall(getGetCompanyMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates specified company.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Company>
         updateCompany(com.google.cloud.talent.v4beta1.UpdateCompanyRequest request) {
@@ -521,14 +662,27 @@ public final class CompanyServiceGrpc {
           getChannel().newCall(getUpdateCompanyMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes specified company.
+     * Prerequisite: The company has no jobs associated with it.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteCompany(com.google.cloud.talent.v4beta1.DeleteCompanyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteCompanyMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all companies associated with the project.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.ListCompaniesResponse>
         listCompanies(com.google.cloud.talent.v4beta1.ListCompaniesRequest request) {
