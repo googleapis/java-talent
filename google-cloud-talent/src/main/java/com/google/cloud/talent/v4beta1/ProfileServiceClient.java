@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1;
 
 import com.google.api.core.ApiFunction;
@@ -31,10 +32,11 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service that handles profile management, including profile CRUD,
  * enumeration and search.
@@ -42,17 +44,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
- *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
- *   Profile profile = Profile.newBuilder().build();
- *   Profile response = profileServiceClient.createProfile(parent, profile);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the profileServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the ProfileServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +72,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ProfileServiceSettings profileServiceSettings =
  *     ProfileServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * ProfileServiceClient profileServiceClient =
- *     ProfileServiceClient.create(profileServiceSettings);
- * </code>
- * </pre>
+ * ProfileServiceClient profileServiceClient = ProfileServiceClient.create(profileServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ProfileServiceSettings profileServiceSettings =
  *     ProfileServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * ProfileServiceClient profileServiceClient =
- *     ProfileServiceClient.create(profileServiceSettings);
- * </code>
- * </pre>
+ * ProfileServiceClient profileServiceClient = ProfileServiceClient.create(profileServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class ProfileServiceClient implements BackgroundResource {
   private final ProfileServiceSettings settings;
   private final ProfileServiceStub stub;
@@ -124,7 +112,7 @@ public class ProfileServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ProfileServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use ProfileServiceSettings}.
+   * for advanced usage - prefer using create(ProfileServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ProfileServiceClient create(ProfileServiceStub stub) {
@@ -156,126 +144,9 @@ public class ProfileServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Searches for profiles within a tenant.
-   *
-   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
-   * structured filters (location filter, education filter, etc.).
-   *
-   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
-   * information.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
-   *   SearchProfilesRequest request = SearchProfilesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setRequestMetadata(requestMetadata)
-   *     .build();
-   *   for (SummarizedProfile element : profileServiceClient.searchProfiles(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SearchProfilesPagedResponse searchProfiles(SearchProfilesRequest request) {
-    return searchProfilesPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Searches for profiles within a tenant.
-   *
-   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
-   * structured filters (location filter, education filter, etc.).
-   *
-   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
-   * information.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
-   *   SearchProfilesRequest request = SearchProfilesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setRequestMetadata(requestMetadata)
-   *     .build();
-   *   ApiFuture&lt;SearchProfilesPagedResponse&gt; future = profileServiceClient.searchProfilesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (SummarizedProfile element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
-      searchProfilesPagedCallable() {
-    return stub.searchProfilesPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Searches for profiles within a tenant.
-   *
-   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
-   * structured filters (location filter, education filter, etc.).
-   *
-   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
-   * information.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
-   *   SearchProfilesRequest request = SearchProfilesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setRequestMetadata(requestMetadata)
-   *     .build();
-   *   while (true) {
-   *     SearchProfilesResponse response = profileServiceClient.searchProfilesCallable().call(request);
-   *     for (SummarizedProfile element : response.getSummarizedProfilesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<SearchProfilesRequest, SearchProfilesResponse>
-      searchProfilesCallable() {
-    return stub.searchProfilesCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists profiles by filter. The order is unspecified.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   for (Profile element : profileServiceClient.listProfiles(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the tenant under which the profile is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
@@ -285,25 +156,14 @@ public class ProfileServiceClient implements BackgroundResource {
   public final ListProfilesPagedResponse listProfiles(TenantName parent) {
     ListProfilesRequest request =
         ListProfilesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(Objects.isNull(parent) ? null : parent.toString())
             .build();
     return listProfiles(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists profiles by filter. The order is unspecified.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   for (Profile element : profileServiceClient.listProfiles(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the tenant under which the profile is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
@@ -315,23 +175,9 @@ public class ProfileServiceClient implements BackgroundResource {
     return listProfiles(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists profiles by filter. The order is unspecified.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   ListProfilesRequest request = ListProfilesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Profile element : profileServiceClient.listProfiles(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -340,75 +186,30 @@ public class ProfileServiceClient implements BackgroundResource {
     return listProfilesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists profiles by filter. The order is unspecified.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   ListProfilesRequest request = ListProfilesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListProfilesPagedResponse&gt; future = profileServiceClient.listProfilesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Profile element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListProfilesRequest, ListProfilesPagedResponse>
       listProfilesPagedCallable() {
     return stub.listProfilesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists profiles by filter. The order is unspecified.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   ListProfilesRequest request = ListProfilesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListProfilesResponse response = profileServiceClient.listProfilesCallable().call(request);
-   *     for (Profile element : response.getProfilesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListProfilesRequest, ListProfilesResponse> listProfilesCallable() {
     return stub.listProfilesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new profile.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   Profile profile = Profile.newBuilder().build();
-   *   Profile response = profileServiceClient.createProfile(parent, profile);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The name of the tenant this profile belongs to.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
@@ -419,25 +220,15 @@ public class ProfileServiceClient implements BackgroundResource {
   public final Profile createProfile(TenantName parent, Profile profile) {
     CreateProfileRequest request =
         CreateProfileRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(Objects.isNull(parent) ? null : parent.toString())
             .setProfile(profile)
             .build();
     return createProfile(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new profile.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   Profile profile = Profile.newBuilder().build();
-   *   Profile response = profileServiceClient.createProfile(parent.toString(), profile);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The name of the tenant this profile belongs to.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
@@ -451,23 +242,9 @@ public class ProfileServiceClient implements BackgroundResource {
     return createProfile(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new profile.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   Profile profile = Profile.newBuilder().build();
-   *   CreateProfileRequest request = CreateProfileRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setProfile(profile)
-   *     .build();
-   *   Profile response = profileServiceClient.createProfile(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -476,42 +253,19 @@ public class ProfileServiceClient implements BackgroundResource {
     return createProfileCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new profile.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   Profile profile = Profile.newBuilder().build();
-   *   CreateProfileRequest request = CreateProfileRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setProfile(profile)
-   *     .build();
-   *   ApiFuture&lt;Profile&gt; future = profileServiceClient.createProfileCallable().futureCall(request);
-   *   // Do something
-   *   Profile response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateProfileRequest, Profile> createProfileCallable() {
     return stub.createProfileCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified profile.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   Profile response = profileServiceClient.getProfile(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the profile to get.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
@@ -520,22 +274,15 @@ public class ProfileServiceClient implements BackgroundResource {
    */
   public final Profile getProfile(ProfileName name) {
     GetProfileRequest request =
-        GetProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+        GetProfileRequest.newBuilder()
+            .setName(Objects.isNull(name) ? null : name.toString())
+            .build();
     return getProfile(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified profile.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   Profile response = profileServiceClient.getProfile(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the profile to get.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
@@ -547,21 +294,9 @@ public class ProfileServiceClient implements BackgroundResource {
     return getProfile(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified profile.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   GetProfileRequest request = GetProfileRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Profile response = profileServiceClient.getProfile(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -570,40 +305,19 @@ public class ProfileServiceClient implements BackgroundResource {
     return getProfileCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified profile.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   GetProfileRequest request = GetProfileRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Profile&gt; future = profileServiceClient.getProfileCallable().futureCall(request);
-   *   // Do something
-   *   Profile response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetProfileRequest, Profile> getProfileCallable() {
     return stub.getProfileCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified profile and returns the updated result.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   Profile profile = Profile.newBuilder().build();
-   *   Profile response = profileServiceClient.updateProfile(profile);
-   * }
-   * </code></pre>
    *
    * @param profile Required. Profile to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -613,21 +327,9 @@ public class ProfileServiceClient implements BackgroundResource {
     return updateProfile(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified profile and returns the updated result.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   Profile profile = Profile.newBuilder().build();
-   *   UpdateProfileRequest request = UpdateProfileRequest.newBuilder()
-   *     .setProfile(profile)
-   *     .build();
-   *   Profile response = profileServiceClient.updateProfile(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -636,41 +338,20 @@ public class ProfileServiceClient implements BackgroundResource {
     return updateProfileCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified profile and returns the updated result.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   Profile profile = Profile.newBuilder().build();
-   *   UpdateProfileRequest request = UpdateProfileRequest.newBuilder()
-   *     .setProfile(profile)
-   *     .build();
-   *   ApiFuture&lt;Profile&gt; future = profileServiceClient.updateProfileCallable().futureCall(request);
-   *   // Do something
-   *   Profile response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateProfileRequest, Profile> updateProfileCallable() {
     return stub.updateProfileCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified profile. Prerequisite: The profile has no associated applications or
    * assignments associated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   profileServiceClient.deleteProfile(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the profile to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
@@ -679,23 +360,16 @@ public class ProfileServiceClient implements BackgroundResource {
    */
   public final void deleteProfile(ProfileName name) {
     DeleteProfileRequest request =
-        DeleteProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+        DeleteProfileRequest.newBuilder()
+            .setName(Objects.isNull(name) ? null : name.toString())
+            .build();
     deleteProfile(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified profile. Prerequisite: The profile has no associated applications or
    * assignments associated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   profileServiceClient.deleteProfile(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the profile to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
@@ -707,22 +381,10 @@ public class ProfileServiceClient implements BackgroundResource {
     deleteProfile(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified profile. Prerequisite: The profile has no associated applications or
    * assignments associated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   DeleteProfileRequest request = DeleteProfileRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   profileServiceClient.deleteProfile(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -731,27 +393,66 @@ public class ProfileServiceClient implements BackgroundResource {
     deleteProfileCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified profile. Prerequisite: The profile has no associated applications or
    * assignments associated.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   DeleteProfileRequest request = DeleteProfileRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = profileServiceClient.deleteProfileCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable() {
     return stub.deleteProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for profiles within a tenant.
+   *
+   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
+   * structured filters (location filter, education filter, etc.).
+   *
+   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
+   * information.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchProfilesPagedResponse searchProfiles(SearchProfilesRequest request) {
+    return searchProfilesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for profiles within a tenant.
+   *
+   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
+   * structured filters (location filter, education filter, etc.).
+   *
+   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
+   * information.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
+      searchProfilesPagedCallable() {
+    return stub.searchProfilesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for profiles within a tenant.
+   *
+   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
+   * structured filters (location filter, education filter, etc.).
+   *
+   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
+   * information.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<SearchProfilesRequest, SearchProfilesResponse>
+      searchProfilesCallable() {
+    return stub.searchProfilesCallable();
   }
 
   @Override
@@ -782,87 +483,6 @@ public class ProfileServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
-  }
-
-  public static class SearchProfilesPagedResponse
-      extends AbstractPagedListResponse<
-          SearchProfilesRequest,
-          SearchProfilesResponse,
-          SummarizedProfile,
-          SearchProfilesPage,
-          SearchProfilesFixedSizeCollection> {
-
-    public static ApiFuture<SearchProfilesPagedResponse> createAsync(
-        PageContext<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile> context,
-        ApiFuture<SearchProfilesResponse> futureResponse) {
-      ApiFuture<SearchProfilesPage> futurePage =
-          SearchProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<SearchProfilesPage, SearchProfilesPagedResponse>() {
-            @Override
-            public SearchProfilesPagedResponse apply(SearchProfilesPage input) {
-              return new SearchProfilesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
-    }
-
-    private SearchProfilesPagedResponse(SearchProfilesPage page) {
-      super(page, SearchProfilesFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class SearchProfilesPage
-      extends AbstractPage<
-          SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile, SearchProfilesPage> {
-
-    private SearchProfilesPage(
-        PageContext<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile> context,
-        SearchProfilesResponse response) {
-      super(context, response);
-    }
-
-    private static SearchProfilesPage createEmptyPage() {
-      return new SearchProfilesPage(null, null);
-    }
-
-    @Override
-    protected SearchProfilesPage createPage(
-        PageContext<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile> context,
-        SearchProfilesResponse response) {
-      return new SearchProfilesPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<SearchProfilesPage> createPageAsync(
-        PageContext<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile> context,
-        ApiFuture<SearchProfilesResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class SearchProfilesFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          SearchProfilesRequest,
-          SearchProfilesResponse,
-          SummarizedProfile,
-          SearchProfilesPage,
-          SearchProfilesFixedSizeCollection> {
-
-    private SearchProfilesFixedSizeCollection(List<SearchProfilesPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static SearchProfilesFixedSizeCollection createEmptyCollection() {
-      return new SearchProfilesFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected SearchProfilesFixedSizeCollection createCollection(
-        List<SearchProfilesPage> pages, int collectionSize) {
-      return new SearchProfilesFixedSizeCollection(pages, collectionSize);
-    }
   }
 
   public static class ListProfilesPagedResponse
@@ -942,6 +562,87 @@ public class ProfileServiceClient implements BackgroundResource {
     protected ListProfilesFixedSizeCollection createCollection(
         List<ListProfilesPage> pages, int collectionSize) {
       return new ListProfilesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchProfilesPagedResponse
+      extends AbstractPagedListResponse<
+          SearchProfilesRequest,
+          SearchProfilesResponse,
+          HistogramQueryResult,
+          SearchProfilesPage,
+          SearchProfilesFixedSizeCollection> {
+
+    public static ApiFuture<SearchProfilesPagedResponse> createAsync(
+        PageContext<SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult> context,
+        ApiFuture<SearchProfilesResponse> futureResponse) {
+      ApiFuture<SearchProfilesPage> futurePage =
+          SearchProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<SearchProfilesPage, SearchProfilesPagedResponse>() {
+            @Override
+            public SearchProfilesPagedResponse apply(SearchProfilesPage input) {
+              return new SearchProfilesPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchProfilesPagedResponse(SearchProfilesPage page) {
+      super(page, SearchProfilesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchProfilesPage
+      extends AbstractPage<
+          SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult, SearchProfilesPage> {
+
+    private SearchProfilesPage(
+        PageContext<SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult> context,
+        SearchProfilesResponse response) {
+      super(context, response);
+    }
+
+    private static SearchProfilesPage createEmptyPage() {
+      return new SearchProfilesPage(null, null);
+    }
+
+    @Override
+    protected SearchProfilesPage createPage(
+        PageContext<SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult> context,
+        SearchProfilesResponse response) {
+      return new SearchProfilesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchProfilesPage> createPageAsync(
+        PageContext<SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult> context,
+        ApiFuture<SearchProfilesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchProfilesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchProfilesRequest,
+          SearchProfilesResponse,
+          HistogramQueryResult,
+          SearchProfilesPage,
+          SearchProfilesFixedSizeCollection> {
+
+    private SearchProfilesFixedSizeCollection(List<SearchProfilesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchProfilesFixedSizeCollection createEmptyCollection() {
+      return new SearchProfilesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchProfilesFixedSizeCollection createCollection(
+        List<SearchProfilesPage> pages, int collectionSize) {
+      return new SearchProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
 }
