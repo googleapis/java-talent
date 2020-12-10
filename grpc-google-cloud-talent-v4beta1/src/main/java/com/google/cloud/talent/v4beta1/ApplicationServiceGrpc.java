@@ -22,14 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * A service that handles application management, including CRUD and
- * enumeration.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/talent/v4beta1/application_service.proto")
@@ -313,75 +306,38 @@ public final class ApplicationServiceGrpc {
     return ApplicationServiceFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service that handles application management, including CRUD and
-   * enumeration.
-   * </pre>
-   */
+  /** */
   public abstract static class ApplicationServiceImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new application entity.
-     * </pre>
-     */
+    /** */
     public void createApplication(
         com.google.cloud.talent.v4beta1.CreateApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateApplicationMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves specified application.
-     * </pre>
-     */
+    /** */
     public void getApplication(
         com.google.cloud.talent.v4beta1.GetApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
       asyncUnimplementedUnaryCall(getGetApplicationMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates specified application.
-     * </pre>
-     */
+    /** */
     public void updateApplication(
         com.google.cloud.talent.v4beta1.UpdateApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateApplicationMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes specified application.
-     * </pre>
-     */
+    /** */
     public void deleteApplication(
         com.google.cloud.talent.v4beta1.DeleteApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteApplicationMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists all applications associated with the profile.
-     * </pre>
-     */
+    /** */
     public void listApplications(
         com.google.cloud.talent.v4beta1.ListApplicationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListApplicationsResponse>
@@ -429,14 +385,7 @@ public final class ApplicationServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service that handles application management, including CRUD and
-   * enumeration.
-   * </pre>
-   */
+  /** */
   public static final class ApplicationServiceStub
       extends io.grpc.stub.AbstractAsyncStub<ApplicationServiceStub> {
     private ApplicationServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -449,13 +398,7 @@ public final class ApplicationServiceGrpc {
       return new ApplicationServiceStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new application entity.
-     * </pre>
-     */
+    /** */
     public void createApplication(
         com.google.cloud.talent.v4beta1.CreateApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
@@ -465,13 +408,7 @@ public final class ApplicationServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves specified application.
-     * </pre>
-     */
+    /** */
     public void getApplication(
         com.google.cloud.talent.v4beta1.GetApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
@@ -481,13 +418,7 @@ public final class ApplicationServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates specified application.
-     * </pre>
-     */
+    /** */
     public void updateApplication(
         com.google.cloud.talent.v4beta1.UpdateApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
@@ -497,13 +428,7 @@ public final class ApplicationServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes specified application.
-     * </pre>
-     */
+    /** */
     public void deleteApplication(
         com.google.cloud.talent.v4beta1.DeleteApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -513,13 +438,7 @@ public final class ApplicationServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists all applications associated with the profile.
-     * </pre>
-     */
+    /** */
     public void listApplications(
         com.google.cloud.talent.v4beta1.ListApplicationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListApplicationsResponse>
@@ -531,14 +450,7 @@ public final class ApplicationServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service that handles application management, including CRUD and
-   * enumeration.
-   * </pre>
-   */
+  /** */
   public static final class ApplicationServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ApplicationServiceBlockingStub> {
     private ApplicationServiceBlockingStub(
@@ -552,64 +464,34 @@ public final class ApplicationServiceGrpc {
       return new ApplicationServiceBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new application entity.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.talent.v4beta1.Application createApplication(
         com.google.cloud.talent.v4beta1.CreateApplicationRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateApplicationMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves specified application.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.talent.v4beta1.Application getApplication(
         com.google.cloud.talent.v4beta1.GetApplicationRequest request) {
       return blockingUnaryCall(getChannel(), getGetApplicationMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates specified application.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.talent.v4beta1.Application updateApplication(
         com.google.cloud.talent.v4beta1.UpdateApplicationRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateApplicationMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes specified application.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deleteApplication(
         com.google.cloud.talent.v4beta1.DeleteApplicationRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteApplicationMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists all applications associated with the profile.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.talent.v4beta1.ListApplicationsResponse listApplications(
         com.google.cloud.talent.v4beta1.ListApplicationsRequest request) {
       return blockingUnaryCall(
@@ -617,14 +499,7 @@ public final class ApplicationServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service that handles application management, including CRUD and
-   * enumeration.
-   * </pre>
-   */
+  /** */
   public static final class ApplicationServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<ApplicationServiceFutureStub> {
     private ApplicationServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -637,13 +512,7 @@ public final class ApplicationServiceGrpc {
       return new ApplicationServiceFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new application entity.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Application>
         createApplication(com.google.cloud.talent.v4beta1.CreateApplicationRequest request) {
@@ -651,13 +520,7 @@ public final class ApplicationServiceGrpc {
           getChannel().newCall(getCreateApplicationMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves specified application.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Application>
         getApplication(com.google.cloud.talent.v4beta1.GetApplicationRequest request) {
@@ -665,13 +528,7 @@ public final class ApplicationServiceGrpc {
           getChannel().newCall(getGetApplicationMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates specified application.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Application>
         updateApplication(com.google.cloud.talent.v4beta1.UpdateApplicationRequest request) {
@@ -679,26 +536,14 @@ public final class ApplicationServiceGrpc {
           getChannel().newCall(getUpdateApplicationMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes specified application.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteApplication(com.google.cloud.talent.v4beta1.DeleteApplicationRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteApplicationMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists all applications associated with the profile.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.ListApplicationsResponse>
         listApplications(com.google.cloud.talent.v4beta1.ListApplicationsRequest request) {
