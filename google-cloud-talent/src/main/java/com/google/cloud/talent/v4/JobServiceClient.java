@@ -349,7 +349,7 @@ public class JobServiceClient implements BackgroundResource {
    * take up to 5 minutes.
    *
    * @param job Required. The Job to be updated.
-   * @param update_mask Strongly recommended for the best service experience.
+   * @param updateMask Strongly recommended for the best service experience.
    *     <p>If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only
    *     the specified fields in [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated.
    *     Otherwise all the fields are updated.

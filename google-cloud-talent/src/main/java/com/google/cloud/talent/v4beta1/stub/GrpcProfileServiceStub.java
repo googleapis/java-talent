@@ -142,11 +142,21 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
         ProfileServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcProfileServiceStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcProfileServiceStub(ProfileServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcProfileServiceCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcProfileServiceStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcProfileServiceStub(
       ProfileServiceStubSettings settings,
       ClientContext clientContext,

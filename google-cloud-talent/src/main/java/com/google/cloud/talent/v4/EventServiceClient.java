@@ -141,7 +141,7 @@ public class EventServiceClient implements BackgroundResource {
    * @param parent Required. Resource name of the tenant under which the event is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/foo/tenants/bar".
-   * @param client_event Required. Events issued when end user interacts with customer's application
+   * @param clientEvent Required. Events issued when end user interacts with customer's application
    *     that uses Cloud Talent Solution.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -164,7 +164,7 @@ public class EventServiceClient implements BackgroundResource {
    * @param parent Required. Resource name of the tenant under which the event is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/foo/tenants/bar".
-   * @param client_event Required. Events issued when end user interacts with customer's application
+   * @param clientEvent Required. Events issued when end user interacts with customer's application
    *     that uses Cloud Talent Solution.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
