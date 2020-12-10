@@ -32,7 +32,6 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -157,7 +156,7 @@ public class CompanyServiceClient implements BackgroundResource {
   public final Company createCompany(ProjectName parent, Company company) {
     CreateCompanyRequest request =
         CreateCompanyRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setCompany(company)
             .build();
     return createCompany(request);
@@ -177,7 +176,7 @@ public class CompanyServiceClient implements BackgroundResource {
   public final Company createCompany(TenantName parent, Company company) {
     CreateCompanyRequest request =
         CreateCompanyRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setCompany(company)
             .build();
     return createCompany(request);
@@ -234,9 +233,7 @@ public class CompanyServiceClient implements BackgroundResource {
    */
   public final Company getCompany(CompanyName name) {
     GetCompanyRequest request =
-        GetCompanyRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetCompanyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCompany(request);
   }
 
@@ -323,9 +320,7 @@ public class CompanyServiceClient implements BackgroundResource {
    */
   public final void deleteCompany(CompanyName name) {
     DeleteCompanyRequest request =
-        DeleteCompanyRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteCompanyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteCompany(request);
   }
 
@@ -380,7 +375,7 @@ public class CompanyServiceClient implements BackgroundResource {
   public final ListCompaniesPagedResponse listCompanies(ProjectName parent) {
     ListCompaniesRequest request =
         ListCompaniesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listCompanies(request);
   }
@@ -399,7 +394,7 @@ public class CompanyServiceClient implements BackgroundResource {
   public final ListCompaniesPagedResponse listCompanies(TenantName parent) {
     ListCompaniesRequest request =
         ListCompaniesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listCompanies(request);
   }

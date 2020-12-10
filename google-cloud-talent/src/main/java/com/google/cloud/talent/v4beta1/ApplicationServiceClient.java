@@ -32,7 +32,6 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -160,7 +159,7 @@ public class ApplicationServiceClient implements BackgroundResource {
   public final Application createApplication(ProfileName parent, Application application) {
     CreateApplicationRequest request =
         CreateApplicationRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setApplication(application)
             .build();
     return createApplication(request);
@@ -215,9 +214,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    */
   public final Application getApplication(ApplicationName name) {
     GetApplicationRequest request =
-        GetApplicationRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetApplicationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getApplication(request);
   }
 
@@ -305,7 +302,7 @@ public class ApplicationServiceClient implements BackgroundResource {
   public final void deleteApplication(ApplicationName name) {
     DeleteApplicationRequest request =
         DeleteApplicationRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     deleteApplication(request);
   }
@@ -358,7 +355,7 @@ public class ApplicationServiceClient implements BackgroundResource {
   public final ListApplicationsPagedResponse listApplications(ProfileName parent) {
     ListApplicationsRequest request =
         ListApplicationsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listApplications(request);
   }

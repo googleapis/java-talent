@@ -32,7 +32,6 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -156,7 +155,7 @@ public class ProfileServiceClient implements BackgroundResource {
   public final ListProfilesPagedResponse listProfiles(TenantName parent) {
     ListProfilesRequest request =
         ListProfilesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listProfiles(request);
   }
@@ -220,7 +219,7 @@ public class ProfileServiceClient implements BackgroundResource {
   public final Profile createProfile(TenantName parent, Profile profile) {
     CreateProfileRequest request =
         CreateProfileRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setProfile(profile)
             .build();
     return createProfile(request);
@@ -274,9 +273,7 @@ public class ProfileServiceClient implements BackgroundResource {
    */
   public final Profile getProfile(ProfileName name) {
     GetProfileRequest request =
-        GetProfileRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProfile(request);
   }
 
@@ -360,9 +357,7 @@ public class ProfileServiceClient implements BackgroundResource {
    */
   public final void deleteProfile(ProfileName name) {
     DeleteProfileRequest request =
-        DeleteProfileRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteProfile(request);
   }
 

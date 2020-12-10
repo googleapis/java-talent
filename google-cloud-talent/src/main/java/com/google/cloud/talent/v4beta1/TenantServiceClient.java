@@ -32,7 +32,6 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -155,7 +154,7 @@ public class TenantServiceClient implements BackgroundResource {
   public final Tenant createTenant(ProjectName parent, Tenant tenant) {
     CreateTenantRequest request =
         CreateTenantRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setTenant(tenant)
             .build();
     return createTenant(request);
@@ -208,9 +207,7 @@ public class TenantServiceClient implements BackgroundResource {
    */
   public final Tenant getTenant(TenantName name) {
     GetTenantRequest request =
-        GetTenantRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetTenantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTenant(request);
   }
 
@@ -293,9 +290,7 @@ public class TenantServiceClient implements BackgroundResource {
    */
   public final void deleteTenant(TenantName name) {
     DeleteTenantRequest request =
-        DeleteTenantRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteTenantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTenant(request);
   }
 
@@ -345,7 +340,7 @@ public class TenantServiceClient implements BackgroundResource {
   public final ListTenantsPagedResponse listTenants(ProjectName parent) {
     ListTenantsRequest request =
         ListTenantsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listTenants(request);
   }

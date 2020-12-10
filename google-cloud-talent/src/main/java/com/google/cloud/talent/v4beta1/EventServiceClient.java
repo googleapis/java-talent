@@ -22,7 +22,6 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4beta1.stub.EventServiceStub;
 import com.google.cloud.talent.v4beta1.stub.EventServiceStubSettings;
 import java.io.IOException;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -150,7 +149,7 @@ public class EventServiceClient implements BackgroundResource {
   public final ClientEvent createClientEvent(ProjectName parent, ClientEvent clientEvent) {
     CreateClientEventRequest request =
         CreateClientEventRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setClientEvent(clientEvent)
             .build();
     return createClientEvent(request);
@@ -174,7 +173,7 @@ public class EventServiceClient implements BackgroundResource {
   public final ClientEvent createClientEvent(TenantName parent, ClientEvent clientEvent) {
     CreateClientEventRequest request =
         CreateClientEventRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setClientEvent(clientEvent)
             .build();
     return createClientEvent(request);

@@ -58,7 +58,6 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -145,7 +144,7 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
 
             @Override
             public Iterable<Profile> extractResources(ListProfilesResponse payload) {
-              return Objects.isNull(payload.getProfilesList())
+              return payload.getProfilesList() == null
                   ? ImmutableList.<Profile>of()
                   : payload.getProfilesList();
             }
@@ -184,7 +183,7 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
 
             @Override
             public Iterable<HistogramQueryResult> extractResources(SearchProfilesResponse payload) {
-              return Objects.isNull(payload.getHistogramQueryResultsList())
+              return payload.getHistogramQueryResultsList() == null
                   ? ImmutableList.<HistogramQueryResult>of()
                   : payload.getHistogramQueryResultsList();
             }
