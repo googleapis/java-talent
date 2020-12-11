@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A service that handles tenant management, including CRUD and enumeration.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/talent/v4beta1/tenant_service.proto")
@@ -298,38 +304,74 @@ public final class TenantServiceGrpc {
     return TenantServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles tenant management, including CRUD and enumeration.
+   * </pre>
+   */
   public abstract static class TenantServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new tenant entity.
+     * </pre>
+     */
     public void createTenant(
         com.google.cloud.talent.v4beta1.CreateTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateTenantMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves specified tenant.
+     * </pre>
+     */
     public void getTenant(
         com.google.cloud.talent.v4beta1.GetTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
       asyncUnimplementedUnaryCall(getGetTenantMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates specified tenant.
+     * </pre>
+     */
     public void updateTenant(
         com.google.cloud.talent.v4beta1.UpdateTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateTenantMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes specified tenant.
+     * </pre>
+     */
     public void deleteTenant(
         com.google.cloud.talent.v4beta1.DeleteTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteTenantMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all tenants associated with the project.
+     * </pre>
+     */
     public void listTenants(
         com.google.cloud.talent.v4beta1.ListTenantsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListTenantsResponse>
@@ -375,7 +417,13 @@ public final class TenantServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles tenant management, including CRUD and enumeration.
+   * </pre>
+   */
   public static final class TenantServiceStub
       extends io.grpc.stub.AbstractAsyncStub<TenantServiceStub> {
     private TenantServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -387,7 +435,13 @@ public final class TenantServiceGrpc {
       return new TenantServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new tenant entity.
+     * </pre>
+     */
     public void createTenant(
         com.google.cloud.talent.v4beta1.CreateTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
@@ -397,7 +451,13 @@ public final class TenantServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves specified tenant.
+     * </pre>
+     */
     public void getTenant(
         com.google.cloud.talent.v4beta1.GetTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
@@ -405,7 +465,13 @@ public final class TenantServiceGrpc {
           getChannel().newCall(getGetTenantMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates specified tenant.
+     * </pre>
+     */
     public void updateTenant(
         com.google.cloud.talent.v4beta1.UpdateTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
@@ -415,7 +481,13 @@ public final class TenantServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes specified tenant.
+     * </pre>
+     */
     public void deleteTenant(
         com.google.cloud.talent.v4beta1.DeleteTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -425,7 +497,13 @@ public final class TenantServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all tenants associated with the project.
+     * </pre>
+     */
     public void listTenants(
         com.google.cloud.talent.v4beta1.ListTenantsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListTenantsResponse>
@@ -437,7 +515,13 @@ public final class TenantServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles tenant management, including CRUD and enumeration.
+   * </pre>
+   */
   public static final class TenantServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<TenantServiceBlockingStub> {
     private TenantServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -450,38 +534,74 @@ public final class TenantServiceGrpc {
       return new TenantServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new tenant entity.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.Tenant createTenant(
         com.google.cloud.talent.v4beta1.CreateTenantRequest request) {
       return blockingUnaryCall(getChannel(), getCreateTenantMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves specified tenant.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.Tenant getTenant(
         com.google.cloud.talent.v4beta1.GetTenantRequest request) {
       return blockingUnaryCall(getChannel(), getGetTenantMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates specified tenant.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.Tenant updateTenant(
         com.google.cloud.talent.v4beta1.UpdateTenantRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateTenantMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes specified tenant.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteTenant(
         com.google.cloud.talent.v4beta1.DeleteTenantRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteTenantMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all tenants associated with the project.
+     * </pre>
+     */
     public com.google.cloud.talent.v4beta1.ListTenantsResponse listTenants(
         com.google.cloud.talent.v4beta1.ListTenantsRequest request) {
       return blockingUnaryCall(getChannel(), getListTenantsMethod(), getCallOptions(), request);
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that handles tenant management, including CRUD and enumeration.
+   * </pre>
+   */
   public static final class TenantServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<TenantServiceFutureStub> {
     private TenantServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -494,7 +614,13 @@ public final class TenantServiceGrpc {
       return new TenantServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new tenant entity.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Tenant>
         createTenant(com.google.cloud.talent.v4beta1.CreateTenantRequest request) {
@@ -502,14 +628,26 @@ public final class TenantServiceGrpc {
           getChannel().newCall(getCreateTenantMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves specified tenant.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Tenant>
         getTenant(com.google.cloud.talent.v4beta1.GetTenantRequest request) {
       return futureUnaryCall(getChannel().newCall(getGetTenantMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates specified tenant.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Tenant>
         updateTenant(com.google.cloud.talent.v4beta1.UpdateTenantRequest request) {
@@ -517,14 +655,26 @@ public final class TenantServiceGrpc {
           getChannel().newCall(getUpdateTenantMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes specified tenant.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteTenant(com.google.cloud.talent.v4beta1.DeleteTenantRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteTenantMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all tenants associated with the project.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.ListTenantsResponse>
         listTenants(com.google.cloud.talent.v4beta1.ListTenantsRequest request) {
