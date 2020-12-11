@@ -85,7 +85,7 @@ public class TenantServiceClientTest {
     Tenant expectedResponse =
         Tenant.newBuilder()
             .setName(TenantName.of("[PROJECT]", "[TENANT]").toString())
-            .setExternalId("external_id-1153075697")
+            .setExternalId("externalId-1699764666")
             .build();
     mockTenantService.addResponse(expectedResponse);
 
@@ -127,7 +127,7 @@ public class TenantServiceClientTest {
     Tenant expectedResponse =
         Tenant.newBuilder()
             .setName(TenantName.of("[PROJECT]", "[TENANT]").toString())
-            .setExternalId("external_id-1153075697")
+            .setExternalId("externalId-1699764666")
             .build();
     mockTenantService.addResponse(expectedResponse);
 
@@ -169,7 +169,7 @@ public class TenantServiceClientTest {
     Tenant expectedResponse =
         Tenant.newBuilder()
             .setName(TenantName.of("[PROJECT]", "[TENANT]").toString())
-            .setExternalId("external_id-1153075697")
+            .setExternalId("externalId-1699764666")
             .build();
     mockTenantService.addResponse(expectedResponse);
 
@@ -208,7 +208,7 @@ public class TenantServiceClientTest {
     Tenant expectedResponse =
         Tenant.newBuilder()
             .setName(TenantName.of("[PROJECT]", "[TENANT]").toString())
-            .setExternalId("external_id-1153075697")
+            .setExternalId("externalId-1699764666")
             .build();
     mockTenantService.addResponse(expectedResponse);
 
@@ -247,7 +247,7 @@ public class TenantServiceClientTest {
     Tenant expectedResponse =
         Tenant.newBuilder()
             .setName(TenantName.of("[PROJECT]", "[TENANT]").toString())
-            .setExternalId("external_id-1153075697")
+            .setExternalId("externalId-1699764666")
             .build();
     mockTenantService.addResponse(expectedResponse);
 

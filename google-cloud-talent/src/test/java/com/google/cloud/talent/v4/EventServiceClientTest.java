@@ -80,10 +80,10 @@ public class EventServiceClientTest {
   public void createClientEventTest() throws Exception {
     ClientEvent expectedResponse =
         ClientEvent.newBuilder()
-            .setRequestId("request_id37109963")
-            .setEventId("event_id278118624")
+            .setRequestId("requestId693933066")
+            .setEventId("eventId-1376502443")
             .setCreateTime(Timestamp.newBuilder().build())
-            .setEventNotes("event_notes445073628")
+            .setEventNotes("eventNotes968522823")
             .build();
     mockEventService.addResponse(expectedResponse);
 
@@ -124,10 +124,10 @@ public class EventServiceClientTest {
   public void createClientEventTest2() throws Exception {
     ClientEvent expectedResponse =
         ClientEvent.newBuilder()
-            .setRequestId("request_id37109963")
-            .setEventId("event_id278118624")
+            .setRequestId("requestId693933066")
+            .setEventId("eventId-1376502443")
             .setCreateTime(Timestamp.newBuilder().build())
-            .setEventNotes("event_notes445073628")
+            .setEventNotes("eventNotes968522823")
             .build();
     mockEventService.addResponse(expectedResponse);
 

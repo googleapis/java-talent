@@ -93,7 +93,7 @@ public class JobServiceClientTest {
         Job.newBuilder()
             .setName(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
             .setCompany(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
-            .setRequisitionId("requisition_id980224926")
+            .setRequisitionId("requisitionId-1769495849")
             .setTitle("title110371416")
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
@@ -104,7 +104,7 @@ public class JobServiceClientTest {
             .setDepartment("department848184146")
             .addAllEmploymentTypes(new ArrayList<EmploymentType>())
             .setIncentives("incentives-1262874520")
-            .setLanguageCode("language_code-412800396")
+            .setLanguageCode("languageCode-2092349083")
             .setPromotionValue(353413845)
             .setQualifications("qualifications1903501412")
             .setResponsibilities("responsibilities-926952660")
@@ -114,7 +114,7 @@ public class JobServiceClientTest {
             .setPostingExpireTime(Timestamp.newBuilder().build())
             .setPostingCreateTime(Timestamp.newBuilder().build())
             .setPostingUpdateTime(Timestamp.newBuilder().build())
-            .setCompanyDisplayName("company_display_name1982424170")
+            .setCompanyDisplayName("companyDisplayName-686915152")
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -157,7 +157,7 @@ public class JobServiceClientTest {
         Job.newBuilder()
             .setName(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
             .setCompany(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
-            .setRequisitionId("requisition_id980224926")
+            .setRequisitionId("requisitionId-1769495849")
             .setTitle("title110371416")
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
@@ -168,7 +168,7 @@ public class JobServiceClientTest {
             .setDepartment("department848184146")
             .addAllEmploymentTypes(new ArrayList<EmploymentType>())
             .setIncentives("incentives-1262874520")
-            .setLanguageCode("language_code-412800396")
+            .setLanguageCode("languageCode-2092349083")
             .setPromotionValue(353413845)
             .setQualifications("qualifications1903501412")
             .setResponsibilities("responsibilities-926952660")
@@ -178,7 +178,7 @@ public class JobServiceClientTest {
             .setPostingExpireTime(Timestamp.newBuilder().build())
             .setPostingCreateTime(Timestamp.newBuilder().build())
             .setPostingUpdateTime(Timestamp.newBuilder().build())
-            .setCompanyDisplayName("company_display_name1982424170")
+            .setCompanyDisplayName("companyDisplayName-686915152")
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -315,7 +315,7 @@ public class JobServiceClientTest {
         Job.newBuilder()
             .setName(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
             .setCompany(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
-            .setRequisitionId("requisition_id980224926")
+            .setRequisitionId("requisitionId-1769495849")
             .setTitle("title110371416")
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
@@ -326,7 +326,7 @@ public class JobServiceClientTest {
             .setDepartment("department848184146")
             .addAllEmploymentTypes(new ArrayList<EmploymentType>())
             .setIncentives("incentives-1262874520")
-            .setLanguageCode("language_code-412800396")
+            .setLanguageCode("languageCode-2092349083")
             .setPromotionValue(353413845)
             .setQualifications("qualifications1903501412")
             .setResponsibilities("responsibilities-926952660")
@@ -336,7 +336,7 @@ public class JobServiceClientTest {
             .setPostingExpireTime(Timestamp.newBuilder().build())
             .setPostingCreateTime(Timestamp.newBuilder().build())
             .setPostingUpdateTime(Timestamp.newBuilder().build())
-            .setCompanyDisplayName("company_display_name1982424170")
+            .setCompanyDisplayName("companyDisplayName-686915152")
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -376,7 +376,7 @@ public class JobServiceClientTest {
         Job.newBuilder()
             .setName(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
             .setCompany(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
-            .setRequisitionId("requisition_id980224926")
+            .setRequisitionId("requisitionId-1769495849")
             .setTitle("title110371416")
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
@@ -387,7 +387,7 @@ public class JobServiceClientTest {
             .setDepartment("department848184146")
             .addAllEmploymentTypes(new ArrayList<EmploymentType>())
             .setIncentives("incentives-1262874520")
-            .setLanguageCode("language_code-412800396")
+            .setLanguageCode("languageCode-2092349083")
             .setPromotionValue(353413845)
             .setQualifications("qualifications1903501412")
             .setResponsibilities("responsibilities-926952660")
@@ -397,7 +397,7 @@ public class JobServiceClientTest {
             .setPostingExpireTime(Timestamp.newBuilder().build())
             .setPostingCreateTime(Timestamp.newBuilder().build())
             .setPostingUpdateTime(Timestamp.newBuilder().build())
-            .setCompanyDisplayName("company_display_name1982424170")
+            .setCompanyDisplayName("companyDisplayName-686915152")
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -437,7 +437,7 @@ public class JobServiceClientTest {
         Job.newBuilder()
             .setName(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
             .setCompany(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
-            .setRequisitionId("requisition_id980224926")
+            .setRequisitionId("requisitionId-1769495849")
             .setTitle("title110371416")
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
@@ -448,7 +448,7 @@ public class JobServiceClientTest {
             .setDepartment("department848184146")
             .addAllEmploymentTypes(new ArrayList<EmploymentType>())
             .setIncentives("incentives-1262874520")
-            .setLanguageCode("language_code-412800396")
+            .setLanguageCode("languageCode-2092349083")
             .setPromotionValue(353413845)
             .setQualifications("qualifications1903501412")
             .setResponsibilities("responsibilities-926952660")
@@ -458,7 +458,7 @@ public class JobServiceClientTest {
             .setPostingExpireTime(Timestamp.newBuilder().build())
             .setPostingCreateTime(Timestamp.newBuilder().build())
             .setPostingUpdateTime(Timestamp.newBuilder().build())
-            .setCompanyDisplayName("company_display_name1982424170")
+            .setCompanyDisplayName("companyDisplayName-686915152")
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -851,7 +851,7 @@ public class JobServiceClientTest {
         SearchJobsResponse.newBuilder()
             .addAllMatchingJobs(new ArrayList<SearchJobsResponse.MatchingJob>())
             .addAllHistogramQueryResults(new ArrayList<HistogramQueryResult>())
-            .setNextPageToken("next_page_token-1530815211")
+            .setNextPageToken("nextPageToken-1386094857")
             .addAllLocationFilters(new ArrayList<Location>())
             .setTotalSize(-705419236)
             .setMetadata(ResponseMetadata.newBuilder().build())
@@ -869,8 +869,8 @@ public class JobServiceClientTest {
             .addAllHistogramQueries(new ArrayList<HistogramQuery>())
             .setOffset(-1019779949)
             .setMaxPageSize(524069526)
-            .setPageToken("page_token1630607433")
-            .setOrderBy("order_by1234304744")
+            .setPageToken("pageToken873572522")
+            .setOrderBy("orderBy-1207110587")
             .setDisableKeywordMatch(true)
             .build();
 
@@ -916,8 +916,8 @@ public class JobServiceClientTest {
               .addAllHistogramQueries(new ArrayList<HistogramQuery>())
               .setOffset(-1019779949)
               .setMaxPageSize(524069526)
-              .setPageToken("page_token1630607433")
-              .setOrderBy("order_by1234304744")
+              .setPageToken("pageToken873572522")
+              .setOrderBy("orderBy-1207110587")
               .setDisableKeywordMatch(true)
               .build();
       client.searchJobs(request);
@@ -933,7 +933,7 @@ public class JobServiceClientTest {
         SearchJobsResponse.newBuilder()
             .addAllMatchingJobs(new ArrayList<SearchJobsResponse.MatchingJob>())
             .addAllHistogramQueryResults(new ArrayList<HistogramQueryResult>())
-            .setNextPageToken("next_page_token-1530815211")
+            .setNextPageToken("nextPageToken-1386094857")
             .addAllLocationFilters(new ArrayList<Location>())
             .setTotalSize(-705419236)
             .setMetadata(ResponseMetadata.newBuilder().build())
@@ -951,8 +951,8 @@ public class JobServiceClientTest {
             .addAllHistogramQueries(new ArrayList<HistogramQuery>())
             .setOffset(-1019779949)
             .setMaxPageSize(524069526)
-            .setPageToken("page_token1630607433")
-            .setOrderBy("order_by1234304744")
+            .setPageToken("pageToken873572522")
+            .setOrderBy("orderBy-1207110587")
             .setDisableKeywordMatch(true)
             .build();
 
@@ -998,8 +998,8 @@ public class JobServiceClientTest {
               .addAllHistogramQueries(new ArrayList<HistogramQuery>())
               .setOffset(-1019779949)
               .setMaxPageSize(524069526)
-              .setPageToken("page_token1630607433")
-              .setOrderBy("order_by1234304744")
+              .setPageToken("pageToken873572522")
+              .setOrderBy("orderBy-1207110587")
               .setDisableKeywordMatch(true)
               .build();
       client.searchJobsForAlert(request);
