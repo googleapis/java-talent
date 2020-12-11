@@ -160,7 +160,7 @@ public class CompanyName implements ResourceName {
   public static List<String> toStringList(List<CompanyName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (CompanyName value : values) {
-      if (Objects.isNull(value)) {
+      if (value == null) {
         list.add("");
       } else {
         list.add(value.toString());
@@ -176,17 +176,17 @@ public class CompanyName implements ResourceName {
 
   @Override
   public Map<String, String> getFieldValuesMap() {
-    if (Objects.isNull(fieldValuesMap)) {
+    if (fieldValuesMap == null) {
       synchronized (this) {
-        if (Objects.isNull(fieldValuesMap)) {
+        if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (!Objects.isNull(project)) {
+          if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (!Objects.isNull(tenant)) {
+          if (tenant != null) {
             fieldMapBuilder.put("tenant", tenant);
           }
-          if (!Objects.isNull(company)) {
+          if (company != null) {
             fieldMapBuilder.put("company", company);
           }
           fieldValuesMap = fieldMapBuilder.build();
@@ -202,7 +202,7 @@ public class CompanyName implements ResourceName {
 
   @Override
   public String toString() {
-    return !Objects.isNull(fixedValue) ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override

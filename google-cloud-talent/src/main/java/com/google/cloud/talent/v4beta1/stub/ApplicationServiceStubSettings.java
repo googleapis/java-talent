@@ -54,7 +54,6 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -143,7 +142,7 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
 
             @Override
             public Iterable<Application> extractResources(ListApplicationsResponse payload) {
-              return Objects.isNull(payload.getApplicationsList())
+              return payload.getApplicationsList() == null
                   ? ImmutableList.<Application>of()
                   : payload.getApplicationsList();
             }

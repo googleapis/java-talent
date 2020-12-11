@@ -68,7 +68,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -164,7 +163,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
             @Override
             public Iterable<Job> extractResources(ListJobsResponse payload) {
-              return Objects.isNull(payload.getJobsList())
+              return payload.getJobsList() == null
                   ? ImmutableList.<Job>of()
                   : payload.getJobsList();
             }
@@ -203,7 +202,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             @Override
             public Iterable<SearchJobsResponse.MatchingJob> extractResources(
                 SearchJobsResponse payload) {
-              return Objects.isNull(payload.getMatchingJobsList())
+              return payload.getMatchingJobsList() == null
                   ? ImmutableList.<SearchJobsResponse.MatchingJob>of()
                   : payload.getMatchingJobsList();
             }
@@ -242,7 +241,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             @Override
             public Iterable<SearchJobsResponse.MatchingJob> extractResources(
                 SearchJobsResponse payload) {
-              return Objects.isNull(payload.getMatchingJobsList())
+              return payload.getMatchingJobsList() == null
                   ? ImmutableList.<SearchJobsResponse.MatchingJob>of()
                   : payload.getMatchingJobsList();
             }
