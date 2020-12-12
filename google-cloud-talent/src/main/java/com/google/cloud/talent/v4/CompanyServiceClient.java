@@ -254,7 +254,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * Updates specified company.
    *
    * @param company Required. The company resource to replace the current resource in the system.
-   * @param update_mask Strongly recommended for the best service experience.
+   * @param updateMask Strongly recommended for the best service experience.
    *     <p>If [update_mask][google.cloud.talent.v4.UpdateCompanyRequest.update_mask] is provided,
    *     only the specified fields in [company][google.cloud.talent.v4.UpdateCompanyRequest.company]
    *     are updated. Otherwise all the fields are updated.

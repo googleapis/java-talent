@@ -252,7 +252,7 @@ public class TenantServiceClient implements BackgroundResource {
    * Updates specified tenant.
    *
    * @param tenant Required. The tenant resource to replace the current resource in the system.
-   * @param update_mask Strongly recommended for the best service experience.
+   * @param updateMask Strongly recommended for the best service experience.
    *     <p>If [update_mask][google.cloud.talent.v4.UpdateTenantRequest.update_mask] is provided,
    *     only the specified fields in [tenant][google.cloud.talent.v4.UpdateTenantRequest.tenant]
    *     are updated. Otherwise all the fields are updated.

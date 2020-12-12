@@ -74,11 +74,21 @@ public class GrpcCompletionStub extends CompletionStub {
         CompletionStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcCompletionStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcCompletionStub(CompletionStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcCompletionCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcCompletionStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcCompletionStub(
       CompletionStubSettings settings,
       ClientContext clientContext,

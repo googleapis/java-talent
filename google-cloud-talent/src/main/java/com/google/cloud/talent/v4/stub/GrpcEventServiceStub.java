@@ -73,11 +73,21 @@ public class GrpcEventServiceStub extends EventServiceStub {
         EventServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcEventServiceStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcEventServiceStub(EventServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcEventServiceCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcEventServiceStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcEventServiceStub(
       EventServiceStubSettings settings,
       ClientContext clientContext,
