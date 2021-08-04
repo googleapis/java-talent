@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-talent/compare/v1.2.2...v1.3.0) (2021-08-04)
+
+
+### Features
+
+* configure initial sp version ([#563](https://www.github.com/googleapis/java-talent/issues/563)) ([5380668](https://www.github.com/googleapis/java-talent/commit/5380668679a4e18de40dac8c7479316caa64b3ca))
+
 ### [1.2.2](https://www.github.com/googleapis/java-talent/compare/v1.2.1...v1.2.2) (2021-07-02)
 
 
