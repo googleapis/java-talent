@@ -1,5 +1,28 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/googleapis/java-talent/compare/v2.1.0...v2.1.1) (2021-08-31)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#598](https://www.github.com/googleapis/java-talent/issues/598)) ([354a3f0](https://www.github.com/googleapis/java-talent/commit/354a3f0823e954f7b838ef1c3bcae4cd48654cf9))
+
+## [2.1.0](https://www.github.com/googleapis/java-talent/compare/v2.0.2...v2.1.0) (2021-08-25)
+
+
+### Features
+
+* Add new commute methods in Search APIs ([#581](https://www.github.com/googleapis/java-talent/issues/581)) ([d62a468](https://www.github.com/googleapis/java-talent/commit/d62a468d7c76a719285ed0d8ad0c084293ff402d))
+* Add new histogram type 'publish_time_in_day' ([d62a468](https://www.github.com/googleapis/java-talent/commit/d62a468d7c76a719285ed0d8ad0c084293ff402d))
+* Support filtering by requisitionId is ListJobs API ([d62a468](https://www.github.com/googleapis/java-talent/commit/d62a468d7c76a719285ed0d8ad0c084293ff402d))
+
+### [2.0.2](https://www.github.com/googleapis/java-talent/compare/v2.0.1...v2.0.2) (2021-08-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#584](https://www.github.com/googleapis/java-talent/issues/584)) ([adbf7ba](https://www.github.com/googleapis/java-talent/commit/adbf7bafbf9f77d83dd62e338c10e0f2728cc2e5))
+
 ### [2.0.1](https://www.github.com/googleapis/java-talent/compare/v2.0.0...v2.0.1) (2021-08-11)
 
 
