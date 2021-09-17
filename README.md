@@ -51,12 +51,12 @@ If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
 implementation platform('com.google.cloud:libraries-bom:23.0.0')
 
-implementation 'com.google.cloud:google-cloud-talent'
+compile 'com.google.cloud:google-cloud-talent'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-talent:2.1.2'
+compile 'com.google.cloud:google-cloud-talent:2.1.2'
 ```
 
 If you are using SBT, add this to your dependencies
