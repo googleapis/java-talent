@@ -62,7 +62,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-talent-v4beta1</artifactId>
-        <version>0.45.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-talent-v4beta1:current} -->
+        <version>2.2.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-talent-v4beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -72,7 +72,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-talent-v4beta1</artifactId>
-        <version>0.45.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-talent-v4beta1:current} -->
+        <version>2.2.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-talent-v4beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
