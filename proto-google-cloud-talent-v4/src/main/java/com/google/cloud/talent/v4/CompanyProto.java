@@ -45,8 +45,7 @@ public final class CompanyProto {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "$google/cloud/talent/v4/company.proto\022\026"
-          + "google.cloud.talent.v4\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032#google/cloud/talent/v4/common.proto\032\034google/api/annotations.proto\"\304\004\n"
+          + "$google/cloud/talent/v4/company.proto\022\026google.cloud.talent.v4\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032#google/cloud/talent/v4/common.proto\032\034google/api/annotations.proto\"\304\004\n"
           + "\007Company\022\014\n"
           + "\004name\030\001 \001(\t\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
