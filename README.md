@@ -13,28 +13,6 @@ Java idiomatic client for [Talent Solution][product-docs].
 
 
 If you are using Maven, add this to your pom.xml file:
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>24.4.0</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-talent</artifactId>
-  </dependency>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
 
 
 ```xml
@@ -45,13 +23,6 @@ If you are using Maven without BOM, add this to your dependencies:
 </dependency>
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:24.4.0')
-
-implementation 'com.google.cloud:google-cloud-talent'
-```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
