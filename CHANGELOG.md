@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.6](https://github.com/googleapis/java-talent/compare/v2.4.5...v2.4.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([63dbf29](https://github.com/googleapis/java-talent/commit/63dbf29c2333b44f9d29b065f8888f081efd4e80))
+
 ## [2.4.5](https://github.com/googleapis/java-talent/compare/v2.4.4...v2.4.5) (2022-10-03)
 
 
